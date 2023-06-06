@@ -1,3 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
+a {
+    color: #fff;
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #ececec;
+    text-decoration: none; 
+}
+
+.dark-mode {
+    background-color: #1f1e1e;
+    color: #fff;
+}
+
+
+
+
+
