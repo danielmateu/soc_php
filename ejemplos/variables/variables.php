@@ -198,6 +198,89 @@
     echo "</pre>";
     ?>
 
+    <h2>Variables Variables</h2>
+
+    <p>Una variable variable toma el valor de una variable y lo trata como
+        el nombre de una variable.</p>
+
+    <?php
+
+    $nombre = "nombre";
+    $$nombre = "valor";
+
+    echo "<p>Variable nombre: $nombre</p>";
+
+    ?>
+
+    <h2>Variables referencia</h2>
+
+    <p>Una variable referencia es un alias de otra variable. Si se modifica
+        el valor de una variable referencia, también se modifica el valor de
+        la variable original.</p>
+
+
+    <?php
+
+    $objeto = new stdClass();
+
+    $objeto->nombre = "Dani";
+    $objeto->apellido = "Mateu";
+    $objeto->edad = 20;
+
+    echo $objeto->nombre;
+    ?>
+
+    <?php
+    class Moto
+    {
+        public $marca;
+        public $modelo;
+        public $color;
+        public $cilindrada;
+
+        public function __construct($marca, $modelo, $color, $cilindrada)
+        {
+            $this->marca = $marca;
+            $this->modelo = $modelo;
+            $this->color = $color;
+            $this->cilindrada = $cilindrada;
+        }
+
+        public function __toString()
+        {
+            return "<p>Marca: $this->marca</p>
+                    <p>Modelo: $this->modelo</p>
+                    <p>Color: $this->color</p>
+                    <p>Cilindrada: $this->cilindrada</p>";
+        }
+    }
+
+    $moto1 = new Moto('Honda', 'CBR', 'Roja', 1000);
+
+    $moto2 = new Moto('Yamaha', 'R1', 'Azul', 1000);
+
+    echo $moto1;
+
+    ?>
+
+    <h2>Constantes</h2>
+
+    <p>Una constante es un identificador (nombre) para un valor único. Como
+        su nombre indica, ese valor no puede cambiar durante la ejecución del
+        script (excepto las constantes mágicas, que no son constantes en
+        realidad). Las constantes se pueden definir usando la función define()
+        o la palabra reservada const.</p>
+
+    <?php
+
+    define("CONSTANTE", "valor");
+
+    echo "<p>Constante: " . CONSTANTE . "</p>";
+    ?>
+
+
+
+
 
 </body>
 
