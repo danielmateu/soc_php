@@ -28,7 +28,15 @@
         <input type="submit" value="Convertir" class="btn btn-primary mt-2">
     </form>
 
+    <pre class='mt-4'>
+        <?php
+        var_dump($_GET);
+        ?>
+    </pre>
+
+
     <?php
+
     if (isset($_GET["km"])) {
         $km = $_GET["km"];
         $millas = $km * 0.621371;
