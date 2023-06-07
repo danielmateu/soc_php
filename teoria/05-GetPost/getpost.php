@@ -36,7 +36,34 @@
         aplicación mediante los métodos HTTP GET y POST.</p>
     >
 
-    
+    <p>Esto se utilizará en diversas situaciones, pero una de las más
+        importantes es procesar la información de los formularios:</p>
+
+    <ul>
+        <li>GET: se utiliza para enviar poca información, como por ejemplo
+            un identificador de un registro, o un parámetro de búsqueda.</li>
+        <li>POST: se utiliza para enviar información más extensa, como por
+            ejemplo los datos de un formulario.</li>
+    </ul>
+
+    <p>Para capturar la información que nos llega a la aplicación, se
+        utiliza la variable superglobal $_GET o $_POST, dependiendo del
+        método utilizado.</p>
+
+    <p>La información que nos llega a la aplicación se envía en pares
+        clave-valor, por lo que para acceder a la información que nos
+        llega, utilizaremos la clave.</p>
+
+    <p>Por ejemplo, si nos llega la información de un formulario con el
+        método GET, y el formulario tiene un campo con el nombre
+        "nombre", para acceder al valor de ese campo, utilizaremos
+        $_GET["nombre"].</p>
+
+    <p>Si nos llega la información con el método POST, utilizaremos
+        $_POST["nombre"].</p>
+
+
+
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
         Volver al principio
