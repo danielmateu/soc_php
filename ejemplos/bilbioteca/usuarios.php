@@ -60,6 +60,18 @@
     echo $conexion->query($consulta) ? "Registro insertado" : "Registro NO insertado";
     ?>
 
+    <!-- Obtener ip -->
+    <!-- <pre>
+
+    <?php
+    // echo $_SERVER['REMOTE_ADDR'];
+    // echo $_SERVER['HTTP_USER_AGENT'];
+    // echo $_SERVER['HTTP_REFERER'];
+    // echo $_SERVER['REQUEST_URI'];
+    // echo $_SERVER['SCRIPT_NAME'];
+    ?>
+</pre> -->
+
 </body>
 
 </html>
