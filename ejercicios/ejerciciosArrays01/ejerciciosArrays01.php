@@ -174,8 +174,65 @@
         print_r($input);
         echo "</pre>";
         ?>
+    </section>
+
+    <section id="array_slice">
+        <h2>Método array-slice</h2>
+
+        <p>El método array_slice devuelve la secuencia de elementos del array tal y como se especifica en los parámetros offset y length. Devuelve la parte del array. Si el índice es mayor que el tamaño del array, devuelve un array vacío.</p>
+
+        <pre class="bg-dark text-light p-2 rounded">
+        $entrada = array("a", "b", "c", "d", "e");
+
+        $salida = array_slice($entrada, 2);      // devuelve "c", "d", y "e"
+        $salida = array_slice($entrada, -2, 1);  // devuelve "d"
+        $salida = array_slice($entrada, 0, 3);   // devuelve "a", "b", y "c"
+
+        // observe las diferencias en las claves de los arrays
+        print_r(array_slice($entrada, 2, -1));
+        print_r(array_slice($entrada, 2, -1, true));
+        </pre>
+
+        <?php
+        $entrada = ['Dani', 'Silvia', 'Nuk'];
+        $salida = array_slice($entrada, 2);
+
+        print_r($salida)
 
 
+
+        ?>
+
+    </section>
+
+    <section id="array_reverse">
+        <h2>Método array_reverse</h2>
+
+        <p>Toma un valor array y devuelve un nuevo array con el orden de los elementos invertido. Devuelve el array en orden inverso.</p>
+
+        <pre class="bg-dark text-light p-2 rounded">
+        $input  = array("php", 4.0, array("verde", "rojo"));
+        $reversed = array_reverse($input);
+        $preserved = array_reverse($input, true);
+
+        print_r($input);
+        print_r($reversed);
+        print_r($preserved);
+        </pre>
+
+        <?php
+        $input  = array("php", 4.0, array("verde", "rojo"));
+
+        $reversed = array_reverse($input);
+        $preserved = array_reverse($input, true);
+
+        echo "<pre>";
+        print_r($input);
+        print_r($reversed);
+
+        print_r($preserved);
+        echo "</pre>";
+        ?>
 
 
 
