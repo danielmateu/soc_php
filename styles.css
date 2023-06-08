@@ -1,13 +1,11 @@
-
-
 a {
     color: #fff;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 a:hover {
     color: #ececec;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .dark-mode {
@@ -15,7 +13,7 @@ a:hover {
     color: #fff;
 }
 
-
-
-
-
+.header {
+    background-color: #1f1e1ed7;
+    color: #fff;
+}
