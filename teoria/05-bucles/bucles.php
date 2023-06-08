@@ -42,7 +42,7 @@
                 La sintaxis del bucle for es la siguiente:
             </p>
 
-            <pre class="bg-dark text-white p-2">
+            <pre class="bg-dark text-white p-2 rounded rounded">
                 <code>
                     for (inicialización; condición; incremento) {
                         // código a ejecutar
@@ -57,7 +57,7 @@
 
             </p>
 
-            <pre class="bg-dark text-white p-2">
+            <pre class="bg-dark text-white p-2 rounded">
                 <code>
                     for ($i = 1; $i <= 10; $i++) {
                         echo $i;
@@ -71,7 +71,7 @@
 
             </p>
 
-            <pre class="bg-dark text-white p-2">
+            <pre class="bg-dark text-white p-2 rounded">
                 <code>
                     $numeros = array(1, 2, 3, 4, 5);
 
@@ -87,7 +87,7 @@
 
             </p>
 
-            <pre class="bg-dark text-white p-2">
+            <pre class="bg-dark text-white p-2 rounded">
                 <code>
                     $nombres = array("Juan" => "García", "María" => "Martínez", "Ana" => "Fernández");
 
@@ -102,7 +102,7 @@
                 El bucle for se puede utilizar para recorrer un array multidimensional. En el siguiente ejemplo se muestra un bucle for que recorre un array multidimensional de nombres y muestra cada uno de ellos:
             </p>
 
-            <pre class="bg-dark text-white p-2">
+            <pre class="bg-dark text-white p-2 rounded">
                 <code>
                     $nombres = array(
                         array("Juan", "García"),
