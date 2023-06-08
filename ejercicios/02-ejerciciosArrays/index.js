@@ -8,12 +8,17 @@ btn.addEventListener('click', () => {
     window.scrollTo(0, 0);
 });
 
+// Obtener boton submit
+const btnSubmit = document.getElementById('btn-submit');
+
+
+
 // Dark y light mode
 
 // Obtener boton
 const btnDark = document.getElementById('flexSwitchCheckDefault');
 
-// Agregar evento click
+// // Agregar evento click
 btnDark.addEventListener('click', () => {
     // Obtener el body
     const body = document.querySelector('body');

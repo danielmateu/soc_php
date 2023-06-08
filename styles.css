@@ -17,3 +17,7 @@ a:hover {
     background-color: #1f1e1ed7;
     color: #fff;
 }
+
+.form-check-input{
+    cursor: pointer;
+}

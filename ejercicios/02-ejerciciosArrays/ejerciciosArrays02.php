@@ -11,8 +11,13 @@
 </head>
 
 <body class="container position-relative">
-    <header class=" header p-4 my-4 rounded">
+    <header class=" header p-4 my-4 rounded d-flex">
         <h1>Ejercicios Arrays 02</h1>
+        <!-- Boton para cambio de modo -->
+        <div class="form-check form-switch position-absolute top-0 end-0 mt-1 me-3">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Modo</label> -->
+        </div>
     </header>
 
     <section id="paresdel0Al100">
@@ -114,7 +119,8 @@
         <form method="post" class="d-flex flex-column col-5">
             <label for="numero">Número</label>
             <input type="number" name="numero" id="numero" value="0">
-            <input type="submit" value="Calcular" class="btn btn-primary mt-2">
+            <button type="submit" value="Calcular" class="btn btn-primary btn-submit mt-2">
+                <!-- <input type="submit" value="Calcular" class="btn btn-primary mt-2"> -->
         </form>
 
         <?php
