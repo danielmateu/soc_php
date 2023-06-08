@@ -35,8 +35,6 @@
 
     <p>Para elevar un número a una potencia, se puede usar la función pow</p>
 
-
-
     <form method="post" class="d-flex flex-column col-5 form">
         <label for="a">a</label>
         <input type="number" name="a" id="a" value="0">
@@ -46,6 +44,9 @@
         <input type="number" name="c" id="c" value="0">
         <input type="submit" value="Calcular" class="btn btn-primary mt-2">
     </form>
+
+    <div id="resultado">
+    </div>
 
     <?php
     if (isset($_POST["a"]) && isset($_POST["b"]) && isset($_POST["c"])) {
@@ -63,7 +64,35 @@
     }
     ?>
 
-    <script src="./index.js"></script>
+    <!-- <script>
+        // obtener los valores de los inputs
+        const a = document.getElementById("a");
+        const b = document.getElementById("b");
+        const c = document.getElementById("c");
+
+        const ecuacion = (a, b, c) => {
+            let x1 = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+            let x2 = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+            return [x1, x2];
+        }
+
+        const mostrarResultado = () => {
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = "";
+            const [x1, x2] = ecuacion(a.value, b.value, c.value);
+            resultado.innerHTML += `<p>El resultado de la ecuación ${a.value} x<sup>2</sup> + ${b.value} x + ${c.value} = 0 es:</p>
+            
+            <p>x<sub>1</sub> = ${x1}</p>
+            <p>x<sub>2</sub> = ${x2}</p>`;
+        }
+
+        // añadir un event listener al botón
+        const boton = document.querySelector("input[type=submit]");
+
+        boton.addEventListener("click", mostrarResultado);
+    </script> -->
+
+    <!-- <script src="./index.js"></script> -->
 </body>
 
 </html>

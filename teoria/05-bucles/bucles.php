@@ -30,9 +30,9 @@
 
     </header>
 
-    <main class="container p-4">
-        <section class="mb-5">
-            <h2 id="for">For</h2>
+    <main class="p-2">
+        <section class="mb-5" id="for">
+            <h2>For</h2>
 
             <p>
                 El bucle for es un bucle determinado, es decir, se sabe de antemano el número de veces que se va a ejecutar.
@@ -121,15 +121,178 @@
 
         </section>
 
-        <section class="mb-5">
-            <h2 id="while">While</h2>
+        <section class="mb-5" id="while">
+            <h2>While</h2>
+
+            <p>
+                El bucle while es un bucle indeterminado, es decir, no se sabe de antemano el número de veces que se va a ejecutar.
+            </p>
+
+            <p>
+                La sintaxis del bucle while es la siguiente:
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    while (condición) {
+                        // código a ejecutar
+                    }
+                </code>
+            </pre>
+
+            <p>
+                La condición se evalúa antes de cada iteración del bucle. Si la condición es verdadera, se ejecuta el código del bucle. Si es falsa, se sale del bucle.
+
+                El siguiente ejemplo muestra un bucle while que muestra los números del 1 al 10:
+
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    $i = 1;
+
+                    while ($i <= 10) {
+                        echo $i;
+                        $i++;
+                    }
+                </code>
+            </pre>
+
+            <p>
+                El bucle while se puede utilizar para recorrer un array. En el siguiente ejemplo se muestra un bucle while que recorre un array de números y muestra cada uno de ellos:
+
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    $numeros = array(1, 2, 3, 4, 5);
+
+                    $i = 0;
+
+                    while ($i < count($numeros)) {
+                        echo $numeros[$i];
+                        $i++;
+                    }
+                </code>
+
+            </pre>
+
         </section>
 
-        <section class="mb-5">
-            <h2 id="doWhile">Do While</h2>
+
+        <section class="mb-5" id="doWhile">
+            <h2>Do While</h2>
+
+            <p>
+                El bucle do while es un bucle indeterminado, es decir, no se sabe de antemano el número de veces que se va a ejecutar.
+            </p>
+
+            <p>
+                La sintaxis del bucle do while es la siguiente:
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    do {
+                        // código a ejecutar
+                    } while (condición);
+                </code>
+            </pre>
+
+            <p>
+                La condición se evalúa al final de cada iteración del bucle. Si la condición es verdadera, se ejecuta el código del bucle. Si es falsa, se sale del bucle.
+
+                El siguiente ejemplo muestra un bucle do while que muestra los números del 1 al 10:
+
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    $i = 1;
+
+                    do {
+                        echo $i;
+                        $i++;
+                    } while ($i <= 10);
+                </code>
+
+            </pre>
+
+            <p>
+                El bucle do while se puede utilizar para recorrer un array. En el siguiente ejemplo se muestra un bucle do while que recorre un array de números y muestra cada uno de ellos:
+
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    $numeros = array(1, 2, 3, 4, 5);
+
+                    $i = 0;
+
+                    do {
+                        echo $numeros[$i];
+                        $i++;
+                    } while ($i < count($numeros));
+                </code>
+
+            </pre>
+
         </section>
-        <section class="mb-5">
-            <h2 id="forEach">For Each</h2>
+        <section class="mb-5" id="forEach">
+            <h2>For Each</h2>
+
+            <p>
+                El bucle foreach se utiliza para recorrer arrays. La sintaxis del bucle foreach es la siguiente:
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    foreach ($array as $valor) {
+                        // código a ejecutar
+                    }
+                </code>
+
+            </pre>
+
+            <p>
+                El bucle foreach recorre el array y en cada iteración asigna el valor del elemento actual a la variable $valor. El bucle foreach finaliza cuando se han recorrido todos los elementos del array.
+
+                El siguiente ejemplo muestra un bucle foreach que recorre un array de números y muestra cada uno de ellos:
+
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    $numeros = array(1, 2, 3, 4, 5);
+
+                    foreach ($numeros as $numero) {
+                        echo $numero;
+                    }
+                </code>
+
+            </pre>
+
+            <p>
+                El bucle foreach se puede utilizar para recorrer un array multidimensional. En el siguiente ejemplo se muestra un bucle foreach que recorre un array multidimensional de nombres y muestra cada uno de ellos:
+
+            </p>
+
+            <pre class="bg-dark text-white p-2 rounded">
+                <code>
+                    $nombres = array(
+                        array("Juan", "García"),
+                        array("María", "Martínez"),
+                        array("Ana", "Fernández")
+                    );
+
+                    foreach ($nombres as $nombre) {
+                        foreach ($nombre as $valor) {
+                            echo $valor;
+                        }
+                    }
+                </code>
+
+            </pre>
         </section>
     </main>
 
