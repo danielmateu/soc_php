@@ -119,8 +119,7 @@
         <form method="post" class="d-flex flex-column col-5">
             <label for="numero">Número</label>
             <input type="number" name="numero" id="numero" value="0">
-            <button type="submit" value="Calcular" class="btn btn-primary btn-submit mt-2">
-                <!-- <input type="submit" value="Calcular" class="btn btn-primary mt-2"> -->
+            <input type="submit" value="Calcular" class="btn btn-primary mt-2">
         </form>
 
         <?php

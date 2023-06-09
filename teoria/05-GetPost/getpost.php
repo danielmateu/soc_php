@@ -62,8 +62,32 @@
     <p>Si nos llega la información con el método POST, utilizaremos
         $_POST["nombre"].</p>
 
+    <p>Si queremos comprobar si nos llega información con el método GET,
+        utilizaremos la función isset($_GET["nombre"]).</p>
 
+    <p>Si queremos comprobar si nos llega información con el método POST,
+        utilizaremos la función isset($_POST["nombre"]).</p>
 
+    <p>Si queremos comprobar si nos llega información con el método GET o
+        POST, utilizaremos la función isset($_REQUEST["nombre"]).</p>
+
+    <p>Si queremos comprobar si nos llega información con el método GET o
+        POST, y además queremos comprobar si el valor es vacío, utilizaremos
+        la función empty($_REQUEST["nombre"]).</p>
+
+    <p>Si queremos comprobar si nos llega información con el método GET o
+        POST, y además queremos comprobar si el valor es vacío, y además
+        queremos comprobar si el valor es igual a un valor determinado,
+        utilizaremos la función empty($_REQUEST["nombre"]) &&
+        $_REQUEST["nombre"] == "valor".</p>
+
+    <p>Si queremos comprobar si nos llega información con el método GET o
+        POST, y además queremos comprobar si el valor es vacío, y además
+        queremos comprobar si el valor es igual a un valor determinado, y
+        además queremos comprobar si el valor es de un tipo determinado,
+        utilizaremos la función empty($_REQUEST["nombre"]) &&
+        $_REQUEST["nombre"] == "valor" && gettype($_REQUEST["nombre"]) ==
+        "tipo".</p>
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
         Volver al principio
