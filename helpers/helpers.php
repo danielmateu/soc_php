@@ -92,7 +92,6 @@ function esNegativo()
     }
 }
 
-
 function dniLetter()
 {
     $numero = $_POST["numero"];
@@ -128,11 +127,13 @@ function isDniValid(string $dni): bool
 {
     // Tomar DNI Que llega por POST
     $dni = $_POST['numero'];
-    // Extraer la letra del DNI
-    $letra = substr($dni, -1);
+    // Extraer la letra del DNI y pasarla a mayúsculas
+    $letra = strtoupper(substr($dni, -1));
+
     // Calcular la letra que corresponde a ese número de DNI
     // $letraCalculada = dniLetter($numero);
     $letraCalculada = dniLetter();
+
 
     return $letra == $letraCalculada;
 }
