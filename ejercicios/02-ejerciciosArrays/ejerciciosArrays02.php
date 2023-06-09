@@ -1,3 +1,7 @@
+<?php
+include_once("../../helpers/helpers.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,13 +32,7 @@
             <h3>Resultado:</h3>
             <p>
                 <?php
-                $pares = [];
-                for ($i = 0; $i <= 100; $i++) {
-                    if ($i % 2 == 0) {
-                        $pares[] = $i;
-                    }
-                }
-                echo implode(', ', $pares);
+                pares()
                 ?>
             </p>
 
@@ -50,13 +48,7 @@
             <h3>Resultado:</h3>
             <p>
                 <?php
-                $multiplos = [];
-                for ($i = 1000; $i >= 0; $i--) {
-                    if ($i % 50 == 0) {
-                        $multiplos[] = $i;
-                    }
-                }
-                echo implode(', ', $multiplos);
+                multiplosDe50()
                 ?>
             </p>
     </section>
@@ -71,11 +63,7 @@
             <h3>Resultado:</h3>
             <p>
                 <?php
-                $tabla = [];
-                for ($i = 0; $i <= 10; $i++) {
-                    $tabla[] = $i * 5;
-                }
-                echo implode(', ', $tabla);
+                tablaDel5()
                 ?>
             </p>
 
@@ -92,22 +80,39 @@
             <h3>Resultado:</h3>
             <p>
                 <?php
-                $tablas = [];
-                for ($i = 1; $i <= 9; $i++) {
-                    $tabla = [];
-                    for ($j = 0; $j <= 10; $j++) {
-                        $tabla[] = $i * $j;
-                    }
-                    $tablas[] = implode(', ', $tabla);
-                }
-                echo implode('<br> ', $tablas);
-                // impriendo con un foreach tabla del x y la tabla
-                // foreach ($tablas as $key => $tabla) {
-                //     echo "Tabla del " . ($key + 1) . ": " . $tabla . "<br>";
-                // }
+                tablasDel1al9()
                 ?>
             </p>
         </div>
+    </section>
+
+    <section id="tablaMultiplicar">
+        <h2>Tabla de multiplicar</h2>
+
+        <p>Escribe un programa que muestre la tabla de multiplicar de un
+            número introducido por la URL (parámetro POST).</p>
+
+        <form method="post" class="d-flex flex-column col-5">
+            <label for="numero">Número</label>
+            <input type="number" name="numero" id="numero" value="0">
+            <input type="submit" value="Enviar" class="btn btn-primary mt-2">
+        </form>
+
+        <?php
+        if (isset($_POST["numeroTabla"])) {
+            $numeroTabla = $_POST["numeroTabla"];
+            $tabla = [];
+            for ($i = 0; $i <= 10; $i++) {
+                $tabla[] = $i * $numeroTabla;
+            }
+            echo "<div class='alert alert-success mt-2'>
+            <h3>Resultado:</h3>
+            <p>Tabla del $numeroTabla => " . implode(', ', $tabla) . "</p>
+            </div>";
+        }
+        ?>
+
+
     </section>
 
     <section id="esPar">
@@ -161,7 +166,6 @@
             <p>El número $numero es " . ($numero < 0 ? "negativo" : ($numero > 0 ? "positivo" : "0")) . "</p>
             </div>";
         }
-
         ?>
     </section>
 
@@ -179,7 +183,6 @@
         </form>
 
         <?php
-        // Solucion con arrays
         if (isset($_POST["numero"])) {
             $numero = $_POST["numero"];
             $letras = array(
@@ -188,10 +191,13 @@
                 "C", "K", "E"
             );
             $resto = $numero % 23;
+
             echo "<div class='alert alert-success mt-2'>
             <h3>Resultado:</h3>
             <p>La letra del DNI $numero es $letras[$resto]</p>
             </div>";
+
+            return $letras[$resto];
         }
         ?>
 

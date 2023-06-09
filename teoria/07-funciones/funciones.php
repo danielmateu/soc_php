@@ -29,6 +29,56 @@
     </header>
 
     <main class="p-2">
+
+        <section>
+            <p>En programación, una función es una secuencia de instrucciones
+                que especifica una tarea concreta, empaquetada como una unidad.</p>
+            <ul>
+                <li>Esta unidad puede ser usada en programas, allí donde sea necesario
+                    realizar dicha tarea.</li>
+                <li>
+                    Las funciones pueden ser definidas dentro de los programas o en
+                    librerías separadas.
+                </li>
+                <li>Se ejecutarán cuando sean llamadas.</li>
+            </ul>
+
+            <p>
+                Una función ya hecha, vista desde el exterior, se puede considerar
+                un mecanismo de caja negra.
+
+                En la llamada, le pasaremos unos valores, con los que realizará
+                unas operaciones y nos devolverá un resultado.
+            </p>
+
+            <p>
+                Como en otros lenguajes, disponemos de una serie de funciones
+                básicas ya implementadas, listas para usar.
+
+                Además, PHP tiene una gran cantidad de extensiones del
+                lenguaje (conectores para bases de datos, procesamiento de
+                imágenes, ficheros PDF, ficheros comprimidos...) que también
+                aportan sus propias colecciones de funciones (y/o métodos).
+
+                <a href="https://www.php.net/manual/es/extensions.php">A modo info!</a>
+            </p>
+
+            <p>
+                Listado completo de funciones y métodos incluye las
+                de las extensiones
+            </p>
+
+            <div class="bg-secondary d-flex flex-column p-4 rounded">
+
+                <a href="http://php.net/manual/es/indexes.functions.php" target="_blank">Completo
+                </a>
+
+                <a href="http://php.net/manual/es/funcref.php" target="_blank">Por categorias
+                </a>
+            </div>
+
+        </section>
+
         <section class="mb-5" id="">
             <h2></h2>
 

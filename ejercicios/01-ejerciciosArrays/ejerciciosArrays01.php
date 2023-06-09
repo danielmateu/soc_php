@@ -14,49 +14,39 @@
     <header class="position-sticky top-0 start-0 header p-4 mt-4 rounded">
         <h1>Ejercicios Arrays 01</h1>
 
-        <p>Prueba las siguientes funciones para trabajar con arrays</p>
+        <!-- <p>Prueba las siguientes funciones para trabajar con arrays</p> -->
 
-        <ul class="">
-            <li>
+        <div class="d-flex justify-content-between">
+            <div class='d-flex flex-column'>
                 <a href="#implode">implode</a>
-            </li>
-            <li>
                 <a href="#shuffle">shuffle</a>
-            </li>
-            <li>
                 <a href="#array_unshift">array_unshift</a>
-            </li>
-            <li>
                 <a href="#array_splice">array_splice</a>
-            </li>
-            <li>
+            </div>
+
+            <div class='d-flex flex-column'>
                 <a href="#array_slice">array_slice</a>
-            </li>
-            <li>
                 <a href="#array_reverse">array_reverse</a>
-            </li>
-            <li>
                 <a href="#array_replace">array_replace</a>
-            </li>
-            <li>
                 <a href="#array_push">array_push</a>
-            </li>
-            <li>
+            </div>
+
+            <div class='d-flex flex-column'>
                 <a href="#array_pop">array_pop</a>
-            </li>
-            <li>
                 <a href="#array_pad">array_pad</a>
-            </li>
-            <li>
                 <a href="#array_flip">array_flip</a>
-            </li>
-            <li>
                 <a href="#array_change_key_case">array_change_key_case</a>
-            </li>
-            <li>
                 <a href="#sizeof">sizeof</a>
-            </li>
-        </ul>
+            </div>
+        </div>
+
+        <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Modo</label> -->
+        </div>
+
+
+
     </header>
 
     <?php
@@ -93,6 +83,13 @@
         <h2>Método shuffle</h2>
 
         <p>Desordena los elementos de un array</p>
+
+        <p>Devuelve
+        <ul>
+            <li>TRUE en caso de éxito</li>
+            <li>FALSE en caso de error</li>
+        </ul>
+        </p>
 
         <pre class="bg-dark text-light p-2 rounded">
             $numbers = range(1, 20);
@@ -237,6 +234,37 @@
 
 
     </section>
+
+
+    <section id="array_replace">
+        <h2>Método array_replace</h2>
+
+        <p>Reemplaza los elementos del array original con elementos de array adicionales</p>
+
+        <pre class="bg-dark text-light p-2 rounded">
+    $base = array("naranja", "plátano", "manzana", "frambuesa");
+    $reemplazos = array(0 => "piña", 4 => "cereza");
+    $reemplazo = array(0 => "grape");
+
+    $resultado = array_replace($base, $reemplazos, $reemplazo);
+    print_r($resultado);
+        </pre>
+
+        <?php
+        $base = array("naranja", "plátano", "manzana", "frambuesa");
+        $reemplazos = array(0 => "piña", 4 => "cereza");
+        $reemplazo = array(0 => "grape");
+
+        $resultado = array_replace($base, $reemplazos, $reemplazo);
+
+        echo "<pre>";
+        print_r($resultado);
+        echo "</pre>";
+        ?>
+
+    </section>
+
+
 
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
