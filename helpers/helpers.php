@@ -58,7 +58,18 @@ function tablasDel1al9()
     return $tablas;
 }
 
+// Tabla de multiplicar
+function tablaMultiplicar($numero)
+{
+    $tabla = [];
+    for ($i = 0; $i <= 10; $i++) {
+        $tabla[] = $i * $numero;
+    }
 
+    // Imprimir el resultado en el html
+    echo implode(', ', $tabla);
+    return $tabla;
+}
 
 // Funcion es par?
 

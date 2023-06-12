@@ -93,22 +93,26 @@ include_once("../../helpers/helpers.php");
             número introducido por la URL (parámetro POST).</p>
 
         <form method="post" class="d-flex flex-column col-5">
-            <label for="numero">Número</label>
-            <input type="number" name="numero" id="numero" value="0">
+            <label for="numeroTabla">Número</label>
+            <input type="number" name="numeroTabla" id="numeroTabla" value="0">
             <input type="submit" value="Enviar" class="btn btn-primary mt-2">
         </form>
 
         <?php
         if (isset($_POST["numeroTabla"])) {
             $numeroTabla = $_POST["numeroTabla"];
-            $tabla = [];
-            for ($i = 0; $i <= 10; $i++) {
-                $tabla[] = $i * $numeroTabla;
-            }
-            echo "<div class='alert alert-success mt-2'>
-            <h3>Resultado:</h3>
-            <p>Tabla del $numeroTabla => " . implode(', ', $tabla) . "</p>
-            </div>";
+            // $tabla = [];
+            // for ($i = 0; $i <= 10; $i++) {
+            //     $tabla[] = $i * $numeroTabla;
+            // }
+            tablaMultiplicar($numeroTabla);
+
+            // echo implode(', ', $tabla);
+
+            // echo "<div class='alert alert-success mt-2'>
+            // <h3>Resultado:</h3>
+            // <p>Tabla del $numeroTabla => " . implode(', ', $tabla) . "</p>
+            // </div>";
         }
         ?>
 
@@ -122,14 +126,14 @@ include_once("../../helpers/helpers.php");
             impar.</p>
 
         <form method="post" class="d-flex flex-column col-5">
-            <label for="numero">Número</label>
-            <input type="number" name="numero" id="numero" value="0">
+            <label for="numeroEsPar">Número</label>
+            <input type="number" name="numeroEsPar" id="numeroEsPar" value="0">
             <input type="submit" value="Calcular" class="btn btn-primary mt-2">
         </form>
 
         <?php
-        if (isset($_POST["numero"])) {
-            $numero = $_POST["numero"];
+        if (isset($_POST["numeroEsPar"])) {
+            $numeroEsPar = $_POST["numeroEsPar"];
             // if ($numero % 2 == 0) {
             //     echo "<p>El número $numero es par</p>";
             // } else {
@@ -139,7 +143,7 @@ include_once("../../helpers/helpers.php");
             // Operador ternario
             echo "<div class='alert alert-success mt-2'>
             <h3>Resultado:</h3>
-            <p>El número $numero es " . ($numero % 2 == 0 ? "par" : "impar") . "</p>
+            <p>El número $numeroEsPar es " . ($numeroEsPar % 2 == 0 ? "par" : "impar") . "</p>
             </div>";
         }
         ?>
@@ -152,18 +156,18 @@ include_once("../../helpers/helpers.php");
         <p>Escribe un programa que dado un número, nos diga si es positivo, negativo o 0</p>
 
         <form method="post" class="d-flex flex-column col-5">
-            <label for="numero">Número</label>
-            <input type="number" name="numero" id="numero" value="0">
+            <label for="numeroEsNegativo">Número</label>
+            <input type="number" name="numeroEsNegativo" id="numeroEsNegativo" value="0">
             <input type="submit" value="Calcular" class="btn btn-primary mt-2">
         </form>
 
         <?php
-        if (isset($_POST["numero"])) {
-            $numero = $_POST["numero"];
+        if (isset($_POST["numeroEsNegativo"])) {
+            $numeroEsNegativo = $_POST["numeroEsNegativo"];
 
             echo "<div class='alert alert-success mt-2'>
             <h3>Resultado:</h3>
-            <p>El número $numero es " . ($numero < 0 ? "negativo" : ($numero > 0 ? "positivo" : "0")) . "</p>
+            <p>El número $numeroEsNegativo es " . ($numeroEsNegativo < 0 ? "negativo" : ($numeroEsNegativo > 0 ? "positivo" : "0")) . "</p>
             </div>";
         }
         ?>
@@ -177,24 +181,24 @@ include_once("../../helpers/helpers.php");
             número.</p>
 
         <form method="post" class="d-flex flex-column col-5">
-            <label for="numero">Número</label>
-            <input type="number" name="numero" id="numero" value="0">
+            <label for="numeroDni">Número</label>
+            <input type="number" name="numeroDni" id="numeroDni" value="0">
             <input type="submit" value="Calcular" class="btn btn-primary mt-2">
         </form>
 
         <?php
-        if (isset($_POST["numero"])) {
-            $numero = $_POST["numero"];
+        if (isset($_POST["numeroDni"])) {
+            $numeroDni = $_POST["numeroDni"];
             $letras = array(
                 "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D",
                 "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L",
                 "C", "K", "E"
             );
-            $resto = $numero % 23;
+            $resto = $numeroDni % 23;
 
             echo "<div class='alert alert-success mt-2'>
             <h3>Resultado:</h3>
-            <p>La letra del DNI $numero es $letras[$resto]</p>
+            <p>La letra del DNI $numeroDni es $letras[$resto]</p>
             </div>";
 
             return $letras[$resto];
