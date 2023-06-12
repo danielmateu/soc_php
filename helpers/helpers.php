@@ -105,7 +105,7 @@ function esNegativo()
 
 // Obtener letra del DNI
 
-function dniLetter($numero)
+function dniLetter(string $numero): string
 {
     $letras = array(
         "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D",

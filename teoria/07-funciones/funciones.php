@@ -13,12 +13,13 @@
 
 <body class="container p-4 position-relative">
 
-    <header class="d-flex flex-col justify-content-center bg-dark  p-2 mb-4 border-bottom position-sticky top-0 start-0  col-12" id="menu">
+    <header class="d-flex justify-content-center bg-dark  p-2 mb-4 border-bottom position-sticky top-0 start-0  col-12" id="menu">
         <h1 class="col-6 text-white">Funciones</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark col-6 d-flex justify-content-around">
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
+        <nav class="navbar navbar-expand-lg navbar-dark col-6 d-flex justify-content-around no-wrap">
+            <a href="#introFunciones">Intro</a>
+            <a href="#creandoFunciones">creando</a>
+            <a href="#probandoFunciones">probando</a>
+            <a href="#pasoDeParametros">paso de parametros</a>
         </nav>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -30,7 +31,7 @@
 
     <main class="p-2">
 
-        <section>
+        <section class="mb-5" id="introFunciones">
             <p>En programación, una función es una secuencia de instrucciones
                 que especifica una tarea concreta, empaquetada como una unidad.</p>
             <ul>
@@ -79,19 +80,174 @@
 
         </section>
 
-        <section class="mb-5" id="">
-            <h2></h2>
+        <section class="mb-5" id="creandoFunciones">
+            <h2>Creando Funciones</h2>
+            <p>
+                Para crear nuestras propias funciones, será muy importante definir
+                de forma clara:
+            </p>
+
+            <ul>
+                <li>El nombre de la función</li>
+                <li>Los parámetros de entrada</li>
+                <li>El valor devuelto</li>
+                <li>Debe lanzar erroes/excepciones?</li>
+            </ul>
+
+            <p>también será importante documentarla</p>
+
+            <p>
+                <a href="http://php.net/manual/es/language.functions.php" target="_blank">Documentación oficial</a>
+            </p>
+
+            <p>
+                La difinición de una función se realiza mediante la palabra reservada <code>function</code> seguida del nombre de la función
+                y los parámetros entre paréntesis separados por comas.
+            </p>
+
+        </section>
+
+        <section class="mb-5" id="probandoFunciones">
+            <h2>Probando Funciones</h2>
+
+            <p>
+                Para probar nuestras funciones, podemos usar el siguiente código:
+            </p>
+
+            <pre class="bg-dark text-white p-2">
+                <code>
+                &lt;?php
+                // Incluimos el fichero con la definición de la función
+                include 'funciones.php';
+                // Llamamos a la función
+                $resultado = suma(2, 3);
+                // Mostramos el resultado
+                echo $resultado;
+                    ?&gt;
+                </code>
+            </pre>
+
+        </section>
+
+        <section class="mb-5" id="implicacionDeTipos">
+            <h2>Implicacion de Tipos</h2>
+
+            <p>
+                En PHP, los tipos de datos de los parámetros y el tipo de dato
+                devuelto no se declaran, pero si se pueden especificar en la
+                documentación.
+            </p>
+
+            <p>
+                En la definición de la función, podemos indicar el tipo de dato
+                qué se espera recibir en cada parámetro, y el tipo de dato que
+                se devolverá.
+            </p>
+
+            <p>
+                <a href="http://php.net/manual/es/functions.arguments.php#functions.arguments.type-declaration" target="_blank">Documentación oficial</a>
+            </p>
+
+            <p>
+
+                En algunos casos, querremos hacer cosas más avanzadas, como
+                las que se muestran a continuación:
+
+                Recibir como parámetro un objeto de un tipo concreto o NULL.
+
+            <pre>
+                    <code>
+                        function foo(?Foo $foo) {
+                            // ...
+                        }
+                    </code>
+                </pre>
+
+            Permitir que un parámetro pueda ser de distintos tipos (PHP8+).
+
+            <pre>
+                    <code>
+                        function foo(Foo|Bar $input) {
+                            // ...
+                        }
+                    </code>
+                </pre>
+
+            Obligar a un parámetro cumplir con varias interfaces (PHP8.1+).
+
+            <pre>
+                    <code>
+                        function foo(Foo&Bar $input) {
+                            // ...
+                        }
+                    </code>
+                </pre>
+            <p>
 
 
         </section>
 
-        <section class="mb-5" id="">
-            <h2></h2>
+        <section class="mb-5" id="pasoDeParametros">
+            <h2>Paso de parámetros</h2>
 
+            <p>
+                En PHP, los parámetros se pasan por valor, es decir, se crea una copia
+                del valor del parámetro en una nueva variable, que es la que se usa
+                dentro de la función.
+
+                Si se modifica el valor de la variable dentro de la función, no se
+                modifica el valor de la variable original.
+            </p>
+
+            <p>
+                <a href="http://php.net/manual/es/language.references.pass.php" target="_blank">Documentación oficial</a>
+
+            </p>
+
+            <p>
+                Para pasar un parámetro por referencia, se debe anteponer el símbolo
+                <code>&</code> al nombre del parámetro en la definición de la función.
+            </p>
+
+
+            <p>
+                <a href="http://php.net/manual/es/language.references.pass.php" target="_blank">Documentación oficial</a>
+            </p>
+
+            <p>
+                Los objetos son pasados siempre por referencia. En este caso,
+                no podemos elegir.
+            </p>
+
+            <p>
+                Un caso curioso es el de los arrays, que en PHP se pasan por
+                valor, aunque podemos indicar con el operador & si los queremos
+                por referencia.
+            </p>
         </section>
 
-        <section class="mb-5" id="">
-            <h2></h2>
+        <section class="mb-5" id="valorDeRetorno">
+            <h2>Valor de retorno</h2>
+
+            <p>
+                En PHP, el valor de retorno de una función se especifica con la
+                palabra reservada <code>return</code>.
+
+                Si no se especifica un valor de retorno, la función devolverá
+                <code>NULL</code>.
+            </p>
+
+            <p>
+                Solamente se puede retornar un único valor.
+
+                Si queremos retornar más de un valor, podemos retornar un objeto o
+                un array que contenga toda la información deseada.
+
+                Si la función puede devolver NULL, se indicará colocando un signo de
+                interrogación delante del tipo de retorno (PHP 7.1+).
+            </p>
+
+
 
         </section>
 
