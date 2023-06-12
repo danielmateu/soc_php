@@ -15,16 +15,23 @@ include_once("../../helpers/helpers.php");
 </head>
 
 <body class="container position-relative">
-    <header class=" header p-4 my-4 rounded d-flex">
+    <header class=" header p-4 my-4 rounded d-flex flex-column position-sticky top-0 start-0">
         <h1>Ejercicios Funciones</h1>
         <!-- Boton para cambio de modo -->
+        <div class="d-flex flex-column">
+            <a href="#01-ejercicio">ejercicio 01</a>
+            <a href="#02-ejercicio">ejercicio 02</a>
+        </div>
+
+
+
         <div class="form-check form-switch position-absolute top-0 end-0 mt-1 me-3">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
             <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Modo</label> -->
         </div>
     </header>
 
-    <section id="resistenciaElectrica">
+    <section id="01-ejercicio" class="p-4">
         <h2>Calcula la resistencia eléctica</h2>
 
         <p>Haz una función que calcule la resistencia eléctrica de dos
@@ -62,13 +69,14 @@ include_once("../../helpers/helpers.php");
 
         function resistenciaElectrica(float $r1 = 0, float $r2 = 0): float
         {
-            $r = 1 / (1 / $r1 + 1 / $r2);
-            return $r;
+            // $req = 1 / (1 / $r1 + 1 / $r2);
+            $req = $r1 * $r2 / ($r1 + $r2);
+            return $req;
         }
 
         echo resistenciaElectrica(4, 6);
         echo "<br>";
-        echo resistenciaElectrica(10, 5);
+        echo resistenciaElectrica(10, 20);
         echo "<br>";
         // echo resistenciaElectrica(0, 0);
 
@@ -76,6 +84,59 @@ include_once("../../helpers/helpers.php");
 
 
     </section>
+
+    <section id="02-ejercicio" class="p-4">
+        <h2>Calcula la resistencia eléctica con N resistencias</h2>
+        
+        <p>Crea una segunda función que te permita calcular la resistencia en
+            paralelo de N resistencias. Utiliza un número de parámetros
+            variable.</p>
+            
+            <p>Prueba la función con las resistencias 4, 6 y 8 y comprueba que el
+                resultado es 2.4.</p>
+                
+                <p>Prueba la función con las resistencias 10, 5 y 2 y comprueba que el
+                    resultado es 1.2121212121212.</p>
+                    
+                    
+                    <p>
+                        La fórmula de la resistencia eléctrica en paralelo es:
+                        
+                        R = 1 / (1/R1 + 1/R2 + 1/R3 + ... + 1/RN)
+
+            Donde R1, R2, R3, ... y RN son las resistencias que se quieren calcular.
+        </p>
+        
+        <?php
+
+/**
+ * Calcula la resistencia eléctica de N resistencias colocadas en paralelo.
+ *
+ * @param float ...$resistencias
+ * @return float
+ */
+
+function resistenciaEnParalelodeNResistencias(float ...$resistencias): float
+{
+    $r = 0;
+    foreach ($resistencias as $resistencia) {
+        $r += 1 / $resistencia;
+    }
+    $r = 1 / $r;
+    return $r;
+}
+
+        echo resistenciaEnParalelodeNResistencias(4, 6, 10, 20); // 1,7647058824
+        echo "<br>";
+        
+        echo resistenciaEnParalelodeNResistencias(10, 5, 1); //0,7692307692
+        echo "<br>";
+        ?>
+
+</section>
+
+<section></section>
+<h2>Calcula la resistencia eléctica con N resistencias</h2>
 
 
 
