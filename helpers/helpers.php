@@ -149,3 +149,4 @@ function isDniValid(string $dni): bool
     // $letraCalculada = dniLetter();
     return $letra == $letraCalculada;
 }
+

@@ -21,6 +21,8 @@ include_once("../../helpers/helpers.php");
         <div class="d-flex flex-column">
             <a href="#01-ejercicio">ejercicio 01</a>
             <a href="#02-ejercicio">ejercicio 02</a>
+            <a href="#03-ejercicio">ejercicio 03</a>
+            <a href="#04-ejercicio">ejercicio 04</a>
         </div>
 
 
@@ -69,16 +71,27 @@ include_once("../../helpers/helpers.php");
 
         function resistenciaElectrica(float $r1 = 0, float $r2 = 0): float
         {
-            // $req = 1 / (1 / $r1 + 1 / $r2);
-            $req = $r1 * $r2 / ($r1 + $r2);
-            return $req;
+            try {
+                //code...
+                $req = $r1 * $r2 / ($r1 + $r2);
+
+                echo "<div class='alert alert-success mt-2'>
+                <h3>Resultado:</h3>
+                <p>La resistencia eléctrica de N resistencias colocadas en paralelo es: <strong>" . $req . "</strong></p>
+                </div>";
+                return $req;
+            } catch (Error $e) {
+                //throw $th;
+                echo "<div class='alert alert-danger'>
+                <p><strong>Error</strong> en la operación </p>
+                </div>";
+                return 0;
+            }
         }
 
-        echo resistenciaElectrica(4, 6);
-        echo "<br>";
-        echo resistenciaElectrica(10, 20);
-        echo "<br>";
-        // echo resistenciaElectrica(0, 0);
+        resistenciaElectrica(4, 6);
+        resistenciaElectrica(10, 20);
+        resistenciaElectrica(0, 0);
 
         ?>
 
@@ -87,56 +100,162 @@ include_once("../../helpers/helpers.php");
 
     <section id="02-ejercicio" class="p-4">
         <h2>Calcula la resistencia eléctica con N resistencias</h2>
-        
+
         <p>Crea una segunda función que te permita calcular la resistencia en
             paralelo de N resistencias. Utiliza un número de parámetros
             variable.</p>
-            
-            <p>Prueba la función con las resistencias 4, 6 y 8 y comprueba que el
-                resultado es 2.4.</p>
-                
-                <p>Prueba la función con las resistencias 10, 5 y 2 y comprueba que el
-                    resultado es 1.2121212121212.</p>
-                    
-                    
-                    <p>
-                        La fórmula de la resistencia eléctrica en paralelo es:
-                        
-                        R = 1 / (1/R1 + 1/R2 + 1/R3 + ... + 1/RN)
+
+        <p>Prueba la función con las resistencias 4, 6 y 8 y comprueba que el
+            resultado es 2.4.</p>
+
+        <p>Prueba la función con las resistencias 10, 5 y 2 y comprueba que el
+            resultado es 1.2121212121212.</p>
+
+
+        <p>
+            La fórmula de la resistencia eléctrica en paralelo es:
+
+            R = 1 / (1/R1 + 1/R2 + 1/R3 + ... + 1/RN)
 
             Donde R1, R2, R3, ... y RN son las resistencias que se quieren calcular.
         </p>
-        
+
         <?php
 
-/**
- * Calcula la resistencia eléctica de N resistencias colocadas en paralelo.
- *
- * @param float ...$resistencias
- * @return float
- */
+        /**
+         * Calcula la resistencia eléctica de N resistencias colocadas en paralelo.
+         *
+         * @param float ...$resistencias
+         * @return float
+         */
 
-function resistenciaEnParalelodeNResistencias(float ...$resistencias): float
-{
-    $r = 0;
-    foreach ($resistencias as $resistencia) {
-        $r += 1 / $resistencia;
-    }
-    $r = 1 / $r;
-    return $r;
-}
+        function resistenciasParalelo(float ...$resistencias): float
+        {
 
-        echo resistenciaEnParalelodeNResistencias(4, 6, 10, 20); // 1,7647058824
+            try {
+                //code...
+                $resultado = 0;
+                foreach ($resistencias as $resistencia) {
+
+                    $resultado += 1 / $resistencia;
+                }
+
+                $resultado = 1 / $resultado;
+
+                echo "<div class='alert alert-success mt-2'>
+                <h3>Resultado:</h3>
+                <p>La resistencia eléctrica de N resistencias colocadas en paralelo es: <strong>" . $resultado . "</strong></p>
+                </div>";
+
+                return $resultado;
+            } catch (Error $e) {
+                //throw $th;
+                // echo $e->getMessage();
+                echo "<div class='alert alert-danger'>
+                <p><strong>Error</strong> en la operación </p>
+                </div>";
+                return 0;
+            }
+        }
+
         echo "<br>";
-        
-        echo resistenciaEnParalelodeNResistencias(10, 5, 1); //0,7692307692
-        echo "<br>";
+        // echo resistenciasParalelo(4, 6, 10, 20); // 1,7647058824
+
+        resistenciasParalelo(4, 6, 10, 20);
+        resistenciasParalelo(10, 5, 1);
+        resistenciasParalelo(10, 5, 0);
+        resistenciasParalelo();
         ?>
 
-</section>
+    </section>
 
-<section></section>
-<h2>Calcula la resistencia eléctica con N resistencias</h2>
+    <section id="03-ejercicio" class="p-4">
+        <h2>Posición final de un móvil</h2>
+
+        <p>
+            Crea una función que calcule la posición final de un móvil x(t) en
+            función de la posición inicial (x0), la velocidad inicial (velocidadInicial), la
+            aceleración (a) y el tiempo (t):
+        </p>
+
+        <p>posicionFinal = posicionInicial + velocidadInicial * tiempo + 1/2 * aceleracion * tiempo^2</p>
+
+        <p>La función debe recibir los cuatro parámetros y devolver el resultado de la fórmula.</p>
+
+        <?php
+
+        /**
+         * Calcula la posición final de un móvil x(t) en función de la posición inicial (posicionInicial), la velocidad inicial (velocidadInicial), la aceleración (a) y el tiempo (t)
+         *
+         * @param float $posicionInicial
+         * @param float $velocidadInicial
+         * @param float $aceleracion
+         * @param float $tiempo
+         * @return float
+         */
+
+        function posicionFinalDeUnMovil(
+            float $posicionInicial = 0,
+            float $velocidadInicial = 0,
+            float $aceleracion,
+            float $tiempo
+        ): float {
+
+            if ($tiempo < 0) throw new Error("El tiempo no puede ser negativo");
+
+            $posicionFinal = 0.5 * $aceleracion * $tiempo ** 2 + $velocidadInicial * $tiempo + $posicionInicial;
+            echo "<div class='alert alert-success mt-2'>
+                <h3>Resultado:</h3>
+                <p>La posición final de un móvil es: <strong>" . $posicionFinal . "</strong></p>
+                </div>";
+            return $posicionFinal;
+        }
+
+        posicionFinalDeUnMovil(0, 2, 0.5, 10);
+        posicionFinalDeUnMovil(5, 10, 0, 0);
+        // posicionFinalDeUnMovil(5, 10, 5, 100);
+        ?>
+    </section>
+
+    <section id="04-ejercicio" class="p-4">
+        <h2>Numero de repeticiones</h2>
+
+        <p>Haz una función que reciba un array y un valor y devuelva el número de veces que aparece ese valor en el array</p>
+
+        <p>Prueba la función con el array [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] y el valor 5 y comprueba que el resultado es 1.</p>
+
+        <p>Prueba la función con el array [1, 2, 3, 4, 5, 5, 5, 5, 5, 0] y el valor 5 y comprueba que el resultado es 5.</p>
+
+        <?php
+
+        /**
+         * Devuelve el número de veces que aparece un valor en un array
+         *
+         * @param array $array
+         * @param mixed $valor
+         * @return integer
+         */
+
+        function numeroDeRepeticiones(array $array, $valor): int
+        {
+            $contador = 0;
+            foreach ($array as $elemento) {
+                if ($elemento === $valor) {
+                    $contador++;
+                }
+            }
+
+            echo "<div class='alert alert-success mt-2'>
+                <h3>Resultado:</h3>
+                <p>El número de veces que aparece el valor <strong>" . $valor . "</strong> en el array es: <strong>" . $contador . "</strong></p>
+                </div>";
+            return $contador;
+        }
+
+        numeroDeRepeticiones([1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 5);
+        numeroDeRepeticiones([1, 2, 3, 4, 5, 5, 5, 5, 5, 0], 5);
+        ?>
+    </section>
 
 
 
