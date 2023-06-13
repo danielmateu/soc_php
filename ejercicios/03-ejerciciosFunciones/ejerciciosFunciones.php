@@ -331,6 +331,37 @@ include_once("../../helpers/helpers.php");
                 quedar modificado.</li>
         </ul>
 
+        <p>Prueba la función con el array [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] y comprueba que el array resultante es [0, 9, 8, 7, 6, 5, 4, 3, 2, 1].</p>
+
+        <?php
+        /**
+         * Invierte el orden de los elementos de un array
+         *
+         * @param array $array
+         * @return array
+         */
+
+        function invierteElOrdenDeLosElementos(array &$array): array
+        {
+            $arrayInvertido = [];
+            for ($i = count($array) - 1; $i >= 0; $i--) {
+                $arrayInvertido[] = $array[$i];
+            }
+
+            echo "<div class='alert alert-success mt-2'>
+                <h3>Resultado:</h3>
+                <p>El array resultante es: <strong>" . implode(", ", $arrayInvertido) . "</strong></p>
+                </div>";
+
+            return $arrayInvertido;
+        }
+
+        $lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+        invierteElOrdenDeLosElementos($lista);
+
+        ?>
+
     </section>
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
