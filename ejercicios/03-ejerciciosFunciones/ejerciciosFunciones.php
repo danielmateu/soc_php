@@ -341,7 +341,7 @@ include_once("../../helpers/helpers.php");
          * @return array
          */
 
-        function invierteElOrdenDeLosElementos(array &$array): array
+        function invierteElOrdenDeLosElementosVersionA(array &$array): array
         {
             $arrayInvertido = [];
             for ($i = count($array) - 1; $i >= 0; $i--) {
@@ -349,7 +349,7 @@ include_once("../../helpers/helpers.php");
             }
 
             echo "<div class='alert alert-success mt-2'>
-                <h3>Resultado:</h3>
+                <h3>Resultado version A:</h3>
                 <p>El array resultante es: <strong>" . implode(", ", $arrayInvertido) . "</strong></p>
                 </div>";
 
@@ -358,7 +358,10 @@ include_once("../../helpers/helpers.php");
 
         $lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-        invierteElOrdenDeLosElementos($lista);
+        invierteElOrdenDeLosElementosVersionA($lista);
+
+        // Versión B: se debe retornar un nuevo vector y el original no debe quedar modificado.
+
 
         ?>
 
