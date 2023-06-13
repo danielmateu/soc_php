@@ -18,6 +18,10 @@ a:hover {
     color: #fff;
 }
 
-.form-check-input{
+.form-check-input {
     cursor: pointer;
+}
+
+.header {
+    z-index: 999;
 }

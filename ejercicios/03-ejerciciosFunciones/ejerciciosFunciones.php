@@ -23,9 +23,9 @@ include_once("../../helpers/helpers.php");
             <a href="#02-ejercicio">ejercicio 02</a>
             <a href="#03-ejercicio">ejercicio 03</a>
             <a href="#04-ejercicio">ejercicio 04</a>
+            <a href="#05-ejercicio">ejercicio 05</a>
+            <a href="#06-ejercicio">ejercicio 06</a>
         </div>
-
-
 
         <div class="form-check form-switch position-absolute top-0 end-0 mt-1 me-3">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -257,7 +257,81 @@ include_once("../../helpers/helpers.php");
         ?>
     </section>
 
+    <section id="05-ejercicio" class="p-4">
+        <h2>Multiplica los valores</h2>
 
+        <p>Haz una función que reciba un array y un entero y multiplique
+            todos los valores del array por el entero. Se debe modificar el
+            array original.
+        </p>
+
+        <p>Prueba la función con el array [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] y el entero 5 y comprueba que el array resultante es [5, 10, 15, 20, 25, 30, 35, 40, 45, 0].</p>
+
+        <?php
+        /**
+         * Multiplica los valores de un array por un entero
+         *
+         * @param array $array
+         * @param integer $entero
+         * @return array
+         */
+
+        // function multiplicaLosValores(array &$array, int $entero): void
+        // {
+        //     // Debemos modificar el array original, por lo que no podemos usar foreach
+        //     // foreach ($array as &$elemento) {
+        //     //     $elemento *= $entero;
+        //     // }
+
+        //     for ($i = 0; $i < count($array); $i++) {
+        //         $array[$i] *= $entero;
+        //     }
+
+        //     echo "<div class='alert alert-success mt-2'>
+        //         <h3>Resultado:</h3>
+        //         <p>El array resultante es: <strong>" . implode(", ", $array) . "</strong></p>
+        //         </div>";
+        //     return;
+        // }
+
+        // multiplicaLosValores([1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 5);
+
+        function multiplicaLosValores(array &$array, int $entero): array
+        {
+
+            for ($i = 0; $i < count($array); $i++) {
+                $array[$i] *= $entero;
+            }
+
+            echo "<div class='alert alert-success mt-2'>
+                <h3>Resultado:</h3>
+                <p>El array resultante es: <strong>" . implode(", ", $array) . "</strong></p>
+                </div>";
+
+            return $array;
+        }
+
+        $lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+        multiplicaLosValores($lista, 5);
+        ?>
+
+
+    </section>
+
+    <section id="06-ejercicio" class="p-4">
+        <h2>Invierte el orden de los elementos</h2>
+
+        <p>Haz una función que reciba un vector e invierta el orden de los
+            elementos que contiene (no vale usar array_reverse()).</p>
+
+        <ul>
+            <li>Versión A: el vector original debe ser modificado.</li>
+            <li>Versión B: se debe retornar un nuevo vector y el original no debe
+                quedar modificado.</li>
+        </ul>
+
+    </section>
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
         Volver al principio
