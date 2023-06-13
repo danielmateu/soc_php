@@ -17,6 +17,7 @@
         <h1 class="col-6 text-white">POO</h1>
         <nav class="navbar navbar-expand-lg navbar-dark col-6 d-flex justify-content-around no-wrap">
             <a href="#introPOO">Intro</a>
+            <a href="#clases">Clases</a>
 
         </nav>
         <!-- Boton para cambio de modo -->
@@ -30,8 +31,28 @@
     <main class="p-2">
 
         <section class="mb-5" id="introPOO">
-            
 
+
+        </section>
+
+        <section class="mb-5" id="clases">
+
+            <?php
+            require '../../clases/Coche.php';
+
+            $seatIbiza = new Coche('Seat', 'Ibiza', 'Rojo', 0);
+            $wvPolo = new Coche('WV', 'Polo', 'Azul', 0, 20000);
+
+            // Acelerar el coche
+            $seatIbiza->acelerar();
+            $seatIbiza->acelerar();
+            $seatIbiza->acelerar();
+
+            echo $seatIbiza->mostrarInformacion();
+            echo '<br>';
+            echo $wvPolo->mostrarInformacion();
+
+            ?>
         </section>
 
 
