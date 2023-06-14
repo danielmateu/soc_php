@@ -32,7 +32,8 @@ class Perro
     public function ladrar()
     {
 
-        return "$this->nombre dice: $this->ladrar";
+        // return "$this->nombre dice: $this->ladrar";
+        echo "GUAU!";
     }
 
     public function comer($comida)

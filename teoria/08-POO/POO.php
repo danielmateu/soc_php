@@ -110,7 +110,7 @@
         &copy; <?= date('Y') ?> - Desarrollo Web en Entorno Servidor
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="../../index.js"></script>
 </body>
 
 </html>

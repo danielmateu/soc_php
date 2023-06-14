@@ -215,7 +215,7 @@ include_once("../../helpers/helpers.php");
         &copy; <?= date('Y') ?> - Desarrollo Web en Entorno Servidor
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="../../index.js"></script>
 
 </body>
 

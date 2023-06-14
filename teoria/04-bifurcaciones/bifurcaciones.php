@@ -28,7 +28,7 @@
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
             <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Modo</label> -->
         </div>
-        
+
     </header>
 
 
@@ -185,7 +185,7 @@
 
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="../../index.js"></script>
 </body>
 
 </html>

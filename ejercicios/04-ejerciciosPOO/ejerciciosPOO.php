@@ -46,17 +46,17 @@
             require_once '../../clases/Perro.php';
 
             $perro = new Perro('Nuk', 'Pastor Català', 10, 'marrón', 25, 'GUAU GUAU! 🐶');
+            echo $perro->ladrar();
             echo $perro;
 
             $perro->ladrar();
             $perro->engordar(5);
+
             echo $perro;
 
 
 
             ?>
-
-
         </section>
 
 
@@ -70,7 +70,7 @@
         &copy; <?= date('Y') ?> - Desarrollo Web en Entorno Servidor
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="../../index.js"></script>
 </body>
 
 </html>

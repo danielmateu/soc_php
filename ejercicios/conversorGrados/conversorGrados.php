@@ -46,9 +46,7 @@
 
     <form action="" method="post" class="d-flex flex-column col-5">
         <label for="fahrenheit">Fahrenheit</label>
-        <input type="number" name="fahrenheit" id="fahrenheit" placeholder="Introduce los grados Fahrenheit"
-        
-        >
+        <input type="number" name="fahrenheit" id="fahrenheit" placeholder="Introduce los grados Fahrenheit">
 
         <input type="submit" value="calcular" class="btn btn-primary mt-2" name="calcular">
 
@@ -73,7 +71,7 @@
 
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="../../index.js"></script>
 </body>
 
 </html>
