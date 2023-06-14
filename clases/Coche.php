@@ -21,7 +21,10 @@ class Coche
     {
         // return 'El coche es un ' . $this->marca . ' ' . $this->modelo . ' de color ' . $this->color . ' , tiene ' . $this->kms . ' kilometros recorridos y va a ' . $this->velocidad . ' km/h';
 
-        return "El coche es un $this->marca $this->modelo de color $this->color, tiene $this->kms kilometros recorridos y va a $this->velocidad km/h";
+        return "
+        <div class = 'alert alert-primary'>
+            <p>El coche es un $this->marca $this->modelo de color $this->color, tiene $this->kms kilometros recorridos y va a $this->velocidad km/h</p>
+        </div>";
     }
 
     public function acelerar()
@@ -36,8 +39,14 @@ class Coche
         $this->velocidad -= 20;
     }
 
+    public function parar()
+    {
+        $this->velocidad = 0;
+    }
+
     public function __toString()
     {
-        return $this->mostrarInformacion();
+        // return $this->mostrarInformacion();
+        return "Coche: $this->marca $this->modelo";
     }
 }

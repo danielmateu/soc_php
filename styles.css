@@ -14,14 +14,11 @@ a:hover {
 }
 
 .header {
-    background-color: #1f1e1ed7;
+    background-color: #1f1e1ed7 !important;
     color: #fff;
+    z-index: 999;
 }
 
 .form-check-input {
     cursor: pointer;
-}
-
-.header {
-    z-index: 999;
 }
