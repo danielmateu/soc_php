@@ -21,6 +21,7 @@
             <a href="#abstraccion">Abstraccion</a>
             <a href="#encapsulacion">Encapsulacion</a>
             <a href="#modularidad">Modularidad</a>
+            <a href="#jerarquia">Jerarquia</a>
             <a href="#polimorfismo">Polimorfismo</a>
         </nav>
         <!-- Boton para cambio de modo -->
@@ -68,7 +69,6 @@
 
             <p>
                 Las clases se utilizan para representar entidades o conceptos. Cada clase es un modelo que define un conjunto de variables (el estado), y métodos apropiados para operar con dichos datos (el comportamiento).
-
             </p>
 
 
@@ -97,7 +97,165 @@
             ?>
         </section>
 
+        <section class="mb-5" id="abstraccion">
+            <h2>Abstraccion</h2>
 
+            <p>
+                La abstracción es la capacidad de representar entidades
+                del mundo real en forma de objetos de datos y métodos
+                asociados, con el fin de simplificar su tratamiento en el
+                programa.
+
+            </p>
+
+
+
+        </section>
+
+        <section class="mb-5" id="encapsulacion">
+            <h2>Encapsulacion</h2>
+
+            <p>
+                La encapsulación es la capacidad de ocultar los datos
+                internos de un objeto y mostrar sólo aquellos que son
+                necesarios para el uso del mismo.
+
+            </p>
+
+            <p>
+                La encapsulación se consigue mediante la definición de
+                atributos y métodos públicos y privados.
+
+            </p>
+
+            <p>
+                Los atributos y métodos privados sólo pueden ser accedidos desde dentro de la propia clase, mientras que los públicos
+                pueden ser accedidos desde cualquier parte del programa.
+
+            </p>
+
+            <p>Mediante el encapsulado se ofrece: </p>
+
+            <ul>
+                <li>Una frontera, delimitando el ámbito de los objetos del software.</li>
+
+                <li>Una interfaz que describe cómo los objetos interactúan con otros.</li>
+
+                <li>Un mecanismo para restringir el acceso a algunos de los
+                    componentes de los objetos.</li>
+            </ul>
+        </section>
+
+        <section class="mb-5" modularidad">
+            <h2>Modularidad</h2>
+
+            <p>
+                La modularidad es la capacidad de dividir un programa en
+                partes más pequeñas (módulos), que pueden ser
+                desarrolladas y probadas de forma independiente.
+
+            </p>
+
+            <p>
+                La modularidad permite la reutilización de código, ya que
+                los módulos pueden ser utilizados en diferentes
+                aplicaciones.
+
+            </p>
+
+            <p>
+                La modularidad se consigue mediante la definición de
+                clases y paquetes.
+
+            </p>
+
+            <p>
+                Una clase es una plantilla para la creación de objetos de
+                datos según un modelo predefinido.
+
+            </p>
+
+            <p>
+                Un paquete es un conjunto de clases relacionadas entre sí,
+                que se agrupan en un directorio.
+
+            </p>
+
+            <p>
+                Los paquetes permiten organizar las clases en grupos
+                lógicos, y evitar conflictos de nombres entre clases.
+
+            </p>
+
+            <p>
+                Los paquetes también permiten controlar el acceso a las
+                clases, ya que una clase sólo puede ser utilizada por otra
+                clase si pertenece al mismo paquete o si es pública.
+
+            </p>
+        </section>
+
+        <section class="mb-5" id='jerarquia'>
+            <h2>Jerarquía</h2>
+
+            <p>
+                La jerarquía es la capacidad de definir clases que heredan
+                atributos y métodos de otras clases.
+
+                La jerarquía permite definir clases genéricas, que
+                agrupan atributos y métodos comunes a otras clases más
+                específicas.
+            </p>
+
+            <p>
+                La jerarquía se consigue mediante la definición de clases
+                padre e hijas.
+
+                Una clase hija hereda los atributos y métodos de la clase
+                padre, y puede añadir nuevos atributos y métodos.
+            </p>
+
+            <p>
+                Una clase hija puede sobrescribir los métodos de la clase
+                padre, para adaptarlos a sus necesidades.
+
+                La clase padre se denomina superclase, y la clase hija se
+                denomina subclase.
+            </p>
+
+            <p>
+                La herencia permite definir clases genéricas, que
+                agrupan atributos y métodos comunes a otras clases más
+                específicas.
+
+                La herencia se consigue mediante la definición de clases
+                padre e hijas.
+            </p>
+
+            <p>
+                Una clase hija hereda los atributos y métodos de la clase
+                padre, y puede añadir nuevos atributos y métodos.
+
+                Una clase hija puede sobrescribir los métodos de la clase
+                padre, para adaptarlos a sus necesidades.
+            </p>
+
+        </section>
+
+        <section class="mb-5" id="polimorfismo">
+            <h2>Polimorfismo</h2>
+
+            <p>
+                El polimorfismo es la capacidad de definir varias clases
+                distintas que contienen métodos con el mismo nombre.
+
+                El polimorfismo permite utilizar un método de distintas
+                formas, según el objeto que lo contenga.
+
+                El polimorfismo se consigue mediante la definición de
+                métodos con el mismo nombre en distintas clases.
+            </p>
+        </section>
 
 
     </main>
