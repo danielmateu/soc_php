@@ -31,6 +31,23 @@ class Punto
         return sqrt($dx * $dx + $dy * $dy);
     }
 
+    // Método que nos permita mostrar el punto
+    public function mostrar()
+    {
+        echo "($this->x, $this->y)";
+    }
+
+    // Método que nos diga si dos puntos son iguales
+    public function igual($punto)
+    {
+        return $this->x == $punto->x && $this->y == $punto->y;
+    }
+
+    // Método que nos diga si son el mismo punto
+    public function esIgual($punto)
+    {
+        return $this === $punto;
+    }
 
     // Método tostring
     public function __toString()

@@ -44,6 +44,18 @@
     $punto2 = new Punto();
     echo "<p>La posicion del \$punto2 es $punto2</p>";
 
+    // Creamos otro punto   
+    $punto3 = new Punto();
+
+    // Clonamos el punto3 en el punto4
+    $punto4 = clone $punto3;
+
+    // Comprobar si dos puntos son iguales
+    echo "<p>¿Son iguales \$punto2 y \$punto3? " . ($punto2->igual($punto3) ? '<strong>Si</strong>' : '<strong>No</strong>') . "</p>";
+
+    // Comprobar si dos puntos son el mismo
+    echo "<p>¿Son el mismo \$punto4 y \$punto3? " . ($punto4->esIgual($punto3) ? '<strong>Si</strong>' : '<strong>No</strong>') . "</p>";
+
     // Mover punto2 una posicion hacia la derecha
     $punto2->mover(1, 0);
     echo "<p><strong>Ahora</strong> la posicion del \$punto2 es $punto2</p>";
