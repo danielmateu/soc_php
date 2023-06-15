@@ -12,8 +12,8 @@
 
 <body class="container d-flex flex-column p-4">
 
-    <header class="header d-flex justify-content-center bg-dark  p-2 mb-4 position-sticky top-0 start-0 col-12 rounded" id="menu">
-        <h1 class="col-6 text-white">Creando y probando la clase Circulo</h1>
+    <header class="header d-flex bg-dark p-2 mb-4 position-sticky top-0 start-0 rounded" id="menu">
+        <h1 class="text-white">Creando y probando la clase Circulo</h1>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -23,6 +23,36 @@
     </header>
 
     <hr>
+
+    <!-- Cuadricula para mostrar el circulo -->
+
+    <!-- <table class="table table-bordered table-hover table-striped table-responsive text-center mx-auto" ">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class=" bg-dark text-white">Y</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="bg-dark text-white">X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="bg-dark text-white">X</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="bg-dark text-white">Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+
 
     <?php
     // require_once './Circulo.php';
@@ -40,6 +70,35 @@
     // echo "<p class='text-center'>Centro: $centro</p>";
 
     echo "<p class='text-center'>Circulo: $circulo</p>";
+
+    echo "<table class='table table-bordered table-hover table-striped table-responsive text-center mx-auto' >
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class='bg-dark text-white'></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td class='bg-dark text-white'></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class='bg-dark text-white'></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class='bg-dark text-white'></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>"
+
+
 
     ?>
 

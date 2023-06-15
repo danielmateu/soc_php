@@ -23,6 +23,15 @@
             <a href="#modularidad">Modularidad</a>
             <a href="#jerarquia">Jerarquia</a>
             <a href="#polimorfismo">Polimorfismo</a>
+            <a href="#herencia">Herencia</a>
+            <a href="#sobrecarga">Sobrecarga</a>
+            <a href="#sobrescritura">Sobrescritura</a>
+            <a href="#clasesAbstractas">Clases Abstractas</a>
+            <a href="#interfaces">Interfaces</a>
+            <a href="#clasesAnonimas">Clases Anonimas</a>
+            <a href="#traits">Traits</a>
+            <a href="#metodosMagicos">Metodos Magicos</a>
+            <a href="#metodosEstaticos">Metodos Estaticos</a>
         </nav>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -80,12 +89,10 @@
             $wvPolo = new Coche('WV', 'Polo', 'Azul', 0, 20000);
 
             // Acelerar el coche
-            $seatIbiza->acelerar();
-            $seatIbiza->acelerar();
-            $seatIbiza->acelerar();
+            $seatIbiza->acelerar()->acelerar()->frenar();
 
             // Frenar el coche
-            $seatIbiza->frenar();
+            // $seatIbiza->frenar();
 
             // Parar el coche
             // $seatIbiza->parar();
@@ -255,6 +262,51 @@
                 El polimorfismo se consigue mediante la definición de
                 métodos con el mismo nombre en distintas clases.
             </p>
+        </section>
+
+        <section class="mb-5" id="metodosMagicos">
+            <h2>Métodos Mágicos</h2>
+
+            <p>
+                Los <strong>métodos mágicos</strong> son métodos que se ejecutan
+                automáticamente en ciertas circunstancias.
+
+                Los <strong>métodos mágicos</strong> se definen con el nombre
+                __nombreDelMetodo__.
+
+                Los <strong>métodos mágicos</strong> se utilizan para realizar
+                acciones que no se pueden realizar con los métodos
+                convencionales.
+
+                Los <strong>métodos mágicos</strong> se invocan automáticamente
+                cuando se produce un evento.
+
+                Los <strong>métodos mágicos</strong> más utilizados son __construct,
+                __toString, __get, __set, __isset, __unset, __clone y __destruct.
+            </p>
+
+        </section>
+
+        <section class="mb-5" id="metodosEstaticos">
+            <h2>Métodos estáticos</h2>
+
+            <p>
+                Los <strong>métodos estáticos</strong> son métodos que pueden ser
+                utilizados sin necesidad de crear un objeto de la clase.
+
+                Los <strong>métodos estáticos</strong> se definen con la palabra clave
+                static.
+
+                Los <strong>métodos estáticos</strong> sólo pueden acceder a atributos y
+                <strong>métodos estáticos</strong> de la clase.
+
+                Los <strong>métodos estáticos</strong> se utilizan para agrupar
+                funcionalidades comunes a todas las instancias de la clase.
+
+                Los <strong>métodos estáticos</strong> se invocan utilizando el nombre de
+                la clase seguido de :: y el nombre del método.
+            </p>
+
         </section>
 
 

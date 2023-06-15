@@ -22,3 +22,8 @@ a:hover {
 .form-check-input {
     cursor: pointer;
 }
+
+.table {
+    width: 400px;
+    height: 400px;
+}

@@ -27,21 +27,24 @@ class Coche
         </div>";
     }
 
-    public function acelerar()
+    public function acelerar(): Coche
     {
         // incrementar la velocidad de 20 en 20
         $this->velocidad += 20;
+        return $this;
     }
 
-    public function frenar()
+    public function frenar(): Coche
     {
         // decrementar la velocidad de 20 en 20
         $this->velocidad -= 20;
+        return $this;
     }
 
-    public function parar()
+    public function parar(): Coche
     {
         $this->velocidad = 0;
+        return $this;
     }
 
     public function __toString()
