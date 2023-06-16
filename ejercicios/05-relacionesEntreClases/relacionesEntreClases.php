@@ -72,6 +72,49 @@
         </section>
 
         <section class="mb-5" id="02">
+            <h2>Ejercicio 02</h2>
+
+            <p>
+                Implementa la clase Rectangulo, que
+                realice una representación mediante un
+                Punto y dos valores (ancho y alto).
+            </p>
+
+            <p>
+                Debemos poder mover el rectángulo,
+                llevarlo al origen, calcular su área,
+                perímetro y diagonal.
+
+                Realiza además las pruebas de todos los
+                métodos y operaciones que implementes
+                en un fichero de test aparte.
+            </p>
+
+            <?php
+            include_once '../../clases/Rectangulo.php';
+            include_once '../../clases/Punto.php';
+
+            $punto = new Punto(0, 0);
+            $rectangulo = new Rectangulo(new Punto(0, 1));
+            $rectangulo->setAncho($punto);
+
+            // Mostrar el rectangulo
+            echo $rectangulo . "<br>";
+
+            // Mover el rectangulo
+            $rectangulo->mover(5, 5);
+            echo $rectangulo . "<br>";
+
+            // Llevar el rectangulo al origen
+            $rectangulo->volverOrigen();
+            echo $rectangulo . "<br>";
+
+            // Calcular el area
+
+
+
+
+            ?>
 
         </section>
 
