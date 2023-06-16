@@ -108,6 +108,8 @@
 
             echo "Area: " . $rectangulo->area() . "<br>";
 
+
+
             echo "Perimetro: " . $rectangulo->perimetro() . "<br>";
 
             echo "Diagonal: " . $rectangulo->diagonal() . "<br>";
