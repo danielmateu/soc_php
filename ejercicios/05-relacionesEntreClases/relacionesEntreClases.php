@@ -94,22 +94,25 @@
             include_once '../../clases/Rectangulo.php';
             include_once '../../clases/Punto.php';
 
-            $punto = new Punto(0, 0);
-            $rectangulo = new Rectangulo(new Punto(0, 1));
-            $rectangulo->setAncho($punto);
+            $rectangulo = new Rectangulo(new Punto(0, 0), 5, 5);
 
-            // Mostrar el rectangulo
-            echo $rectangulo . "<br>";
+            echo "Posicion original: <br>
+            $rectangulo <br>
+            ";
 
-            // Mover el rectangulo
             $rectangulo->mover(5, 5);
-            echo $rectangulo . "<br>";
 
-            // Llevar el rectangulo al origen
-            $rectangulo->volverOrigen();
-            echo $rectangulo . "<br>";
+            echo "Posicion final: <br>
+            $rectangulo <br>
+            ";
 
-            // Calcular el area
+            echo "Area: " . $rectangulo->area() . "<br>";
+
+            echo "Perimetro: " . $rectangulo->perimetro() . "<br>";
+
+            echo "Diagonal: " . $rectangulo->diagonal() . "<br>";
+
+
 
 
 
