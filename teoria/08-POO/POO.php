@@ -32,6 +32,8 @@
             <a href="#traits">Traits</a>
             <a href="#metodosMagicos">Metodos Magicos</a>
             <a href="#metodosEstaticos">Metodos Estaticos</a>
+            <!-- Constantes de clase -->
+            <a href="#constantesDeClase">Constantes de clase</a>
         </nav>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -305,6 +307,25 @@
 
                 Los <strong>métodos estáticos</strong> se invocan utilizando el nombre de
                 la clase seguido de :: y el nombre del método.
+            </p>
+
+        </section>
+
+        <section class="mb-5" id="constantesDeClase">
+            <h2>Constantes de clase</h2>
+
+            <p>
+                Las <strong>constantes de clase</strong> son atributos cuyo valor no
+                puede ser modificado.
+
+                Las <strong>constantes de clase</strong> se definen con la palabra
+                clave const.
+
+                Las <strong>constantes de clase</strong> se utilizan para definir
+                valores que no pueden ser modificados.
+
+                Las <strong>constantes de clase</strong> se invocan utilizando el
+                nombre de la clase seguido de :: y el nombre de la constante.
             </p>
 
         </section>

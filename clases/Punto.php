@@ -1,12 +1,37 @@
 <?php
 class Punto
 {
+
+    // Atributos
     public $x = 0, $y = 0;
 
+    // Constructor
     public function __construct(int $x = 0, int $y = 0)
     {
         $this->x = $x;
         $this->y = $y;
+    }
+
+    // Método estático que nos permita obtener la distancia entre dos puntos
+    public static function distanciaEntreDosPuntos(Punto $punto1, Punto $punto2): float
+    {
+        // $dx = $punto1->x - $punto2->x;
+        // $dy = $punto1->y - $punto2->y;
+        // return sqrt($dx * $dx + $dy * $dy);
+
+        // Otra forma de hacerlo:
+        return sqrt(pow($punto1->x - $punto2->x, 2) + pow($punto1->y - $punto2->y, 2));
+    }
+
+    // Método de objeto que devuelve la distancia entre dos puntos
+    public function distancia($punto): float
+    {
+        // $dx = $this->x - $punto->x;
+        // $dy = $this->y - $punto->y;
+        // return sqrt($dx * $dx + $dy * $dy);
+
+        // Otra forma de hacerlo:
+        return sqrt(pow($this->x - $punto->x, 2) + pow($this->y - $punto->y, 2));
     }
 
     // Método que nos permita devolver el punto al origen
@@ -23,13 +48,7 @@ class Punto
         $this->y += $dy;
     }
 
-    // Método que devuelve la distancia entre dos puntos
-    public function distancia($punto)
-    {
-        $dx = $this->x - $punto->x;
-        $dy = $this->y - $punto->y;
-        return sqrt($dx * $dx + $dy * $dy);
-    }
+
 
     // Método que nos permita mostrar el punto
     public function mostrar()
