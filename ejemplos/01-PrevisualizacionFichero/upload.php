@@ -70,7 +70,42 @@
                     }
                 }
 
+                // Controlar el tamaño del fichero
+                if ($_FILES['fichero']['size'] > 1000000) {
+                    echo '
+                    <div class = "d-flex flex-column justify-content-center align-items-center bg-danger p-5 rounded">
+                        <h3>El fichero es demasiado grande</h3>
+                    </div>
+                    
+                    ';
+                }
 
+                // Ruta del fichero temporal
+                $rutal_temporal = $_FILES['fichero']['tmp_name'];
+
+                // Recuperar el tipo de MIME del fichero con Fileinfo
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+
+                // Obtener el tipo MIME del fichero
+                $tipo_mime = finfo_file($finfo, $rutal_temporal);
+
+                // Comprobar que sea imagen
+                if (strpos($tipo_mime, 'image') === false) {
+                    echo '
+                    <div class = "d-flex flex-column justify-content-center align-items-center bg-danger p-5 rounded">
+                        <h3>El fichero no es una imagen</h3>
+                    </div>
+                    
+                    ';
+
+                    // Finalizar la ejecución del script
+                    exit();
+                }
+
+                // Calcular la ruta final
+                $ruta_final = './imagenes/' . $_FILES['fichero']['name'];
+
+                // Mover el fichero de la carpeta temporal a la carpeta de destino
                 // Si no hay errores mostrar la imagen
                 if ($_FILES['fichero']['error'] == 0) {
                     // Mover el fichero de la carpeta temporal a la carpeta de destino
@@ -87,9 +122,6 @@
 
                     </div>';
                 };
-
-
-
 
 
                 ?>

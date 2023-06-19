@@ -37,11 +37,6 @@
                     <input type="hidden" name="MAX_FILE_SIZE" value="1250000000" class="form-control">
                     <input type="file" name="fichero" id="file-with-preview" class="form-control" accept=".jpg, .jpeg, .gif, .png">
                 </div>
-                <div>
-                    <label for="file-with-preview">Sube tu imagen de perfil</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1250000000" class="form-control">
-                    <input type="file" name="fichero" id="file-with-preview" class="form-control" accept=".jpg, .jpeg, .gif, .png">
-                </div>
 
                 <br>
 
