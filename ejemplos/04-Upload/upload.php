@@ -31,7 +31,9 @@
 
             <pre>
                 <?php
-                class UploadException extends Exception{}
+                class UploadException extends Exception
+                {
+                }
 
                 require_once './libraries/Upload.php';
 
