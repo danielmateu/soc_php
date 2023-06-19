@@ -24,7 +24,7 @@ class Rectangulo
     // Método que nos permita mover el rectangulo
     public function mover(int $dx, int $dy)
     {
-        $this->punto->mover($dx, $dy);
+        return $this->punto->mover($dx, $dy);
     }
 
     // Método que nos permita llevar el rectangulo al origen
@@ -34,13 +34,13 @@ class Rectangulo
     }
 
     // Método que nos permita calcular el area
-    public function area(): int
+    public function area(): float
     {
         return $this->ancho * $this->alto;
     }
 
     // Método que nos permita calcular el perimetro
-    public function perimetro(): int
+    public function perimetro(): float
     {
         return $this->ancho * 2 + $this->alto * 2;
     }
@@ -48,7 +48,8 @@ class Rectangulo
     // Método que nos permita calcular la diagonal
     public function diagonal(): float
     {
-        return sqrt(pow($this->ancho, 2) + pow($this->alto, 2));
+        // return sqrt(pow($this->ancho, 2) + pow($this->alto, 2));
+        return hypot($this->ancho, $this->alto);
     }
 
     // Método que nos permita mostrar el rectangulo

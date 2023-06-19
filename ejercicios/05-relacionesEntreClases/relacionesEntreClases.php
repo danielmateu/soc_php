@@ -54,17 +54,20 @@
             $figura->addPunto(new Punto(1, 1));
             $figura->addPunto(new Punto(1, 0));
 
-            echo "Posicion original: <br>
+            // Mostrar figura con var_dump  
+            var_dump($figura);
+
+            echo "<hr>Posicion original: <br>
             $figura <br>
             ";
 
             $figura->mover(5, 5);
 
-            echo "Posicion final: <br>
+            echo "<hr>Posicion final: <br>
             $figura <br>
             ";
 
-            echo "Perimetro: " . $figura->perimetro() . "<br>";
+            echo "<hr>Perimetro: " . $figura->perimetro() . "<br>";
 
 
 
@@ -94,29 +97,23 @@
             include_once '../../clases/Rectangulo.php';
             include_once '../../clases/Punto.php';
 
-            $rectangulo = new Rectangulo(new Punto(0, 0), 5, 5);
+            $rectangulo = new Rectangulo(new Punto(0, 0), 10, 20);
 
-            echo "Posicion original: <br>
+            echo "<hr>Posicion original: <br>
             $rectangulo <br>
             ";
 
             $rectangulo->mover(5, 5);
 
-            echo "Posicion final: <br>
+            echo "<hr>Posicion final: <br>
             $rectangulo <br>
             ";
 
-            echo "Area: " . $rectangulo->area() . "<br>";
+            echo "<hr>Area: " . $rectangulo->area() . "<br>";
 
+            echo "<hr>Perimetro: " . $rectangulo->perimetro() . "<br>";
 
-
-            echo "Perimetro: " . $rectangulo->perimetro() . "<br>";
-
-            echo "Diagonal: " . $rectangulo->diagonal() . "<br>";
-
-
-
-
+            echo "<hr>Diagonal: " . $rectangulo->diagonal() . "<br>";
 
 
             ?>
