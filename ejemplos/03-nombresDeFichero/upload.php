@@ -117,7 +117,7 @@
                     $extension = pathinfo($nombre_original, PATHINFO_EXTENSION);
 
                     // Generar un nombre único
-                    $nombre_final = uniqid() . '.' . $extension;
+                    $nombre_final = uniqid('file_') . '.' . $extension;
 
                     // Calcular la ruta final
                     $ruta_final = $directorio . $nombre_final;
@@ -127,12 +127,11 @@
 
                     // Mostrar la imagen
                     echo '
-                    <div class = "mt-5 
-                    d-flex flex-column justify-content-center align-items-center bg-success p-5 rounded">
+                    <div class = "mt-2 d-flex flex-column justify-content-center align-items-center bg-success p-5 rounded">
                     <h3>Imagen subida correctamente</h3>
                     <p>Nombre original: ' . $_FILES['fichero']['name'] . '</p>
 
-                    <img src="./imagenes/' . $_FILES['fichero']['name'] . '" alt="Imagen subida" class="img-fluid">
+                    <img src="' . $ruta_final . '" alt="Imagen subida" class="img-fluid">
 
                     </div>';
                 };
