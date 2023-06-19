@@ -70,6 +70,7 @@
                     }
                 }
 
+
                 // Si no hay errores mostrar la imagen
                 if ($_FILES['fichero']['error'] == 0) {
                     // Mover el fichero de la carpeta temporal a la carpeta de destino
@@ -81,11 +82,13 @@
                     d-flex flex-column justify-content-center align-items-center bg-success p-5 rounded">
                     <h3>Imagen subida correctamente</h3>
                     <p>Nombre original: ' . $_FILES['fichero']['name'] . '</p>
-                    
+
                     <img src="./imagenes/' . $_FILES['fichero']['name'] . '" alt="Imagen subida" class="img-fluid">
 
                     </div>';
                 };
+
+
 
 
 
