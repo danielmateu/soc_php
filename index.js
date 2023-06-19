@@ -20,3 +20,6 @@ btnDark.addEventListener('click', () => {
     // Agregar o quitar la clase dark-mode
     body.classList.toggle('dark-mode');
 });
+
+// Autogeneracion de nombres
+
