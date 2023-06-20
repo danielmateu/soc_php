@@ -42,13 +42,11 @@
                     'fichero',
                     'imagenes',
                     true,
-                    1048576,
+                    250000000,
                     'image/*',
                     'img_',
                     true
                 );
-
-
 
                 // Muestra el mensaje de exito
                 echo '

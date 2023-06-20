@@ -37,12 +37,6 @@
                 <input type="submit" value="Enviar" class="btn btn-primary">
             </form>
 
-            <!-- <figure>
-                <img src="./imagenes/default-image.png" alt="default image" id="preview-image" class="img-fluid rounded">
-            </figure> -->
-
-            <!-- Galeria -->
-
             <?php
             class UploadException extends Exception
             {
@@ -70,7 +64,6 @@
                 }
                 ?>
             </div>
-
 
         </section>
 
