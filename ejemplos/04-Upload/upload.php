@@ -23,7 +23,7 @@
 
     </header>
 
-    <main class="p-2">
+    <main class="p-1">
 
         <h2>Datos del fichero recibido en el servidor</h2>
 
@@ -51,7 +51,8 @@
                 // Muestra el mensaje de exito
                 echo '
                     <div class = "d-flex flex-column justify-content-center align-items-center bg-success p-5 rounded">
-                        <h3>El fichero se ha subido correctamente 😎</h3>
+                        <h3>El fichero se ha subido correctamente!</h3>
+                        <h3>😊</h3>
                         <img src="' . $ruta . '" alt="Imagen subida" class="img-fluid">
                     </div>
                     
