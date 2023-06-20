@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subida de Ficheros</title>
+    <title>Lectura de Ficheros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles.css">
 
@@ -14,7 +14,7 @@
 <body class="container p-4 position-relative">
 
     <header class="header d-flex flex-column bg-dark  p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4" id="menu">
-        <h1 class="col-6 text-white">Subida de Ficheros</h1>
+        <h1 class="col-6 text-white">Lectura de Ficheros</h1>
         <nav class="navbar navbar-dark d-flex flex-column align-items-start">
             <a href="#trabajandoConFicheros">Trabajando Con Ficheros</a>
             <!-- <a href="#subirFicherosAlServidor">Subir ficheros al servidor</a> -->
