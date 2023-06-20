@@ -17,8 +17,8 @@
         <h1 class="col-6 text-white">Subida de Ficheros</h1>
         <nav class="navbar navbar-dark d-flex flex-column align-items-start">
             <a href="#trabajandoConFicheros">Trabajando Con Ficheros</a>
-            <a href="#subirFicherosAlServidor">Subir ficheros al servidor</a>
-            <a href="#formularioDeSubida">El formulario de Subida</a>
+            <!-- <a href="#subirFicherosAlServidor">Subir ficheros al servidor</a> -->
+            <!-- <a href="#formularioDeSubida">El formulario de Subida</a> -->
         </nav>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -133,6 +133,147 @@
 
 
 
+        </section>
+
+        <section class="mb-5">
+            <h2>Lectura de ficheros</h2>
+
+            <p>Para leer un fichero, usaremos fread(), fgets(), fgetc(), etc.</p>
+
+            <p>Por lo general, leeremos o escribiremos en la <strong>posición a la que apunte</strong> el apuntador</p>
+
+            <h3>Ejemplo</h3>
+
+            <pre class="bg-dark text-light p-2">
+                <code>
+                <?php
+                $fichero = './textos/cuento.txt';
+
+                // Si el fichero no es legible...
+                if (!is_readable($fichero)) {
+                    throw new Exception("El fichero no es legible");
+                }
+
+                // Abrimos el fichero en modo lectura
+                $apuntador = fopen($fichero, 'r');
+
+                // Leemos el fichero carácter a carácter
+                while ($caracter = fgetc($apuntador)) {
+                    echo $caracter;
+                }
+                // Cerramos el fichero
+                fclose($apuntador);
+                ?>
+
+                </code>
+
+                
+            </pre>
+        </section>
+
+        <section class="mb-5">
+            <h2>Lectura de fichero linea a linea</h2>
+
+            <h3>Ejemplo</h3>
+
+            <pre class="bg-dark text-light p-2">
+                <code>
+                <?php
+                $fichero = './textos/cuento.txt';
+
+                // Si el fichero no es legible...
+                if (!is_readable($fichero)) {
+                    throw new Exception("El fichero no es legible");
+                }
+
+                // Abrimos el fichero en modo lectura
+                $apuntador = fopen($fichero, 'r');
+
+                // Leemos el fichero línea a línea
+                while ($linea = fgets($apuntador)) {
+                    echo $linea;
+                }
+
+                // Cerramos el fichero
+                fclose($apuntador);
+                ?>
+
+                </code>
+
+                
+            </pre>
+        </section>
+
+        <section class="mb-5">
+            <h2>Función fread()</h2>
+
+            <p>La función <strong>fread()</strong> recibe como parametros el apuntador y el número de bytes que queremos leer.</p>
+
+            <p>Devuelve una cadena de caracteres con el contenido leido.</p>
+
+            <h3>Ejemplo</h3>
+
+            <pre class="bg-dark text-light p-2">
+                <code>
+                <?php
+                $fichero = './textos/cuento.txt';
+
+                // Si el fichero no es legible...
+                if (!is_readable($fichero)) {
+                    throw new Exception("El fichero no es legible");
+                }
+
+                // Abrimos el fichero en modo lectura
+                $apuntador = fopen($fichero, 'r');
+
+                // Leemos el fichero 10 bytes
+                $contenido = fread($apuntador, 54);
+
+                // Cerramos el fichero
+                fclose($apuntador);
+
+                echo $contenido;
+                ?>
+
+                </code>
+
+
+
+        </section>
+
+        <section class="mb-5">
+            <h2>file_get_contents()</h2>
+
+            <p>La función <strong>file_get_contents()</strong> recibe como parametro el nombre del fichero y devuelve una cadena de caracteres con el contenido del fichero.</p>
+
+            <p>Es una función muy útil para leer ficheros pequeños.</p>
+
+            <h3>Ejemplo</h3>
+
+            <pre class="bg-dark text-light p-2">
+                <code>
+                <?php
+                $fichero = './textos/cuento.txt';
+
+                // Si el fichero no es legible...
+                if (!is_readable($fichero)) {
+                    throw new Exception("El fichero no es legible");
+                }
+
+                // Leemos el fichero
+                $contenido = file_get_contents($fichero);
+
+                echo $contenido;
+
+                // Tambien podemos recuperar el contenido de una URL
+                $url = file_get_contents('https://www.google.es');
+
+                echo $url;
+                ?>
+
+                </code>
+
+            </pre>
         </section>
 
 
