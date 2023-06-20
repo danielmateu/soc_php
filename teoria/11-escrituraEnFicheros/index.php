@@ -16,9 +16,9 @@
     <header class="header d-flex flex-column bg-dark  p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4" id="menu">
         <h1 class="col-6 text-white">Escritura en Ficheros</h1>
         <nav class="navbar navbar-dark d-flex flex-column align-items-start">
-            <a href="#trabajandoConFicheros">Trabajando Con Ficheros</a>
-            <!-- <a href="#subirFicherosAlServidor">Subir ficheros al servidor</a> -->
-            <!-- <a href="#formularioDeSubida">El formulario de Subida</a> -->
+            <a href="#escrituraEnFicheros">Escritura en Ficheros</a>
+            <a href="#fprint">fprint()</a>
+            <a href="#file_put_contents">file_put_contents()</a>
         </nav>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -28,7 +28,7 @@
 
     </header>
 
-    <main class="p-2">
+    <main class="p-2" id='escrituraEnFicheros'>
 
         <section class="mb-5">
             <h2>Escritura en fichero</h2>
@@ -124,7 +124,7 @@
 
         </section>
 
-        <section class="mb-5">
+        <section class="mb-5" id="fprint">
             <h2>Función fprintf()</h2>
 
             <p>La función <code>fprintf()</code> es similar a <code>fwrite()</code> pero permite dar formato al texto que se va a escribir</p>
@@ -200,6 +200,8 @@
             ?>
 
         </section>
+
+        <section class="mb-5" id="file_put_contents"></section>
 
 
     </main>
