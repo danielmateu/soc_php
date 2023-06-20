@@ -29,8 +29,16 @@ a:hover {
 }
 
 img {
-    width: 10em;
+    width: 15em;
+}
 
+img:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
 }
 
 .galeria {
@@ -40,6 +48,6 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
-    background-color: #1f1e1e;
+    background-color: #597a86;
     padding: 1em;
 }
