@@ -38,7 +38,7 @@ class Upload
         bool $unique = true,   // generar nombre único?
         int $max = 0,          // tamaño max del fichero (0 ilimitado)
         string $mime = '.',    // tipo MIME (image/jpeg, image/*, etc)
-        string $prefix = '',   // prefijo para el nombre del fichero
+        string $prefix = 'file_',   // prefijo para el nombre del fichero
         bool $returnFullRoute = false  // retorna la ruta final completa o solo el nombre del fichero
     ): string {
 
