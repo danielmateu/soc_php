@@ -39,6 +39,10 @@
                 moverlos, leer, escribir, borrarlos, cambiar permisos, cambiar
                 propietario, cambiar grupos...
 
+            </p>
+
+            <p>
+
                 Realiza cualquier operación permitida por el sistema operativo
                 (generalmente Linux), siempre y cuando se tengan los permisos
                 adecuados.
@@ -56,6 +60,77 @@
                 Esto es lo que conocemos popularmente como “subir un archivo”
                 y es el tema tratado a continuación.
             </p>
+
+            <p>Las funciones para trabajar con archivos (ficheros) las
+                encontraremos en el manual de PHP en el siguiente <a href="http://php.net/manual/es/ref.filesystem.php" class="enlace"><strong>enlace</strong></a>
+            </p>
+
+            <p>Para abrir un fichero, usaremos fopen(), y para cerrarlo fclose().</p>
+
+            <p>
+                Para leer un fichero, usaremos fread(), fgets(), fgetc(), etc.
+                Para escribir en un fichero, usaremos fwrite(), fputs(), etc.
+
+            </p>
+
+            <p>Podemos comprobar si un fichero existe con
+                file_exists(), y borrarlo con unlink().</p>
+            </p>
+
+            <p>Tambien podemos comprobar si es legible o si se puede escribir en el con is_readable() y is_writable() respectivamente.
+            </p>
+
+            <p>Para crear un directorio usaremos mkdir(), y para borrarlo rmdir().</p>
+
+
+        </section>
+
+        <section class="mb-5">
+            <h2>Apuntador a fichero</h2>
+
+            <p>
+                Una vez que el fichero está abierto y disponemos de la variable con el apuntador, podemos realizar operaciones de lectura o escritura sobre el fichero.
+            </p>
+
+            <p>
+                Para leer un fichero, usaremos fread(), fgets(), fgetc(), etc.
+                Para escribir en un fichero, usaremos fwrite(), fputs(), etc.
+            </p>
+
+            <p>Por lo general, leeremos o escribiremos en la <strong>posición a la que apunte</strong> el apuntador</p>
+
+            <p>Este apuntador se mueve cada vez que leemos o escribimos, pero tambien lo podremos mover a nuestro antojo usando la función <strong>fseek()</strong> que recibe como parametros el apuntador, la posición a la que queremos moverlo y la constante que indica desde donde queremos moverlo.
+
+            </p>
+
+        </section>
+
+        <section class="mb-5">
+            <h2>Modos de apertura</h2>
+
+            <p>Existen diversos <strong>modos de apertura</strong></p>
+
+            <ul>
+                <li>r:
+                    <p>Abre el fichero para lectura. El fichero debe existir previamente.</p>
+                </li>
+                <li>r+:
+                    <p>Abre el fichero para lectura y escritura. El fichero debe existir previamente.</p>
+                </li>
+                <li>w:
+                    <p>Abre el fichero para escritura. Si no existe, lo crea. Si existe, lo sobreescribe.</p>
+                </li>
+                <li>w+:
+                    <p>Abre el fichero para lectura y escritura. Si no existe, lo crea. Si existe, lo sobreescribe.</p>
+                </li>
+                <li>a:
+                    <p>Abre el fichero para escritura. Si no existe, lo crea. Si existe, escribe al final del fichero.</p>
+                </li>
+                <li>a+:
+                    <p>Abre el fichero para lectura y escritura. Si no existe, lo crea. Si existe, escribe al final del fichero.</p>
+                </li>
+            </ul>
+
 
 
         </section>

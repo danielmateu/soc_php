@@ -8,6 +8,16 @@ a:hover {
     text-decoration: none;
 }
 
+.enlace {
+    color: #686868;
+
+}
+
+.enlace:hover {
+    color: #686868;
+
+}
+
 .dark-mode {
     background-color: #1f1e1e;
     color: #fff;
