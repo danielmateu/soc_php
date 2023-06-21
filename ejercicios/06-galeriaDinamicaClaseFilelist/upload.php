@@ -63,7 +63,8 @@
                     // $fichero = fopen('error.log', 'a');
 
                     // Escribir mensaje de error en el fichero con la fecha y el mensaje de error
-                    $mensaje = date('d-m-Y H:i:s') . "\n" . $error->getMessage() . "\n";
+                    $mensaje = date('d-m-Y H:i:s') . "\n" . $error->getMessage() . " En linea " . $error->getLine() . "\n";
+
 
                     // Cerrar fichero
                     // fclose($fichero);
@@ -73,7 +74,7 @@
 
 
                     echo '
-                        <div class = "d-flex flex-column justify-content-center align-items-center bg-danger p-5 rounded">
+                        <div class = "d-flex flex-column justify-content-center align-items-center bg-danger py-5 rounded ">
                             <h3>' . $error->getMessage() . '</h3>
                             <h3>😢</h3>
                         </div>

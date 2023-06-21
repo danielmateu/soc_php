@@ -33,16 +33,74 @@
         <section class="mb-5">
             <h2>Introducción</h2>
 
+            <p>
+                A lo largo de la ejecución de los programas, se pueden producir
+                errores.
 
+                Un error es una situación anómala en nuestra aplicación, que
+                puede llevar a que el programa falle.
+            </p>
+
+            <p>
+                Para evitar que el programa finalice de forma brusca e inesperada
+                el programador debe gestionar los errores que se puedan
+                producir.
+
+            </p>
 
         </section>
 
         <section class="mb-5" id="erroresYExcepciones">
             <h2>Errores Y Excepciones</h2>
 
+            <p>
+                En PHP, los errores se gestionan mediante excepciones.
+            </p>
+
+            <p>
+                Una excepción es una situación anómala en la ejecución de un
+                programa, que puede llevar a que el programa falle.
+
+                Cuando se produce una excepción, el programa lanza un objeto
+                que contiene información sobre el error.
+
+            </p>
+
+            <p>
+                Si el programador no gestiona la excepción, el programa finaliza
+                de forma brusca e inesperada.
+
+                Si el programador gestiona la excepción, el programa puede
+                continuar su ejecución.
+            </p>
+
+
+
         </section>
 
-        <section class="mb-5" id="excepciones"></section>
+        <section class="mb-5" id="excepciones">
+            <h2>Excepciones</h2>
+
+            <p>
+                En PHP, las excepciones se gestionan mediante bloques
+                <code>try</code> y <code>catch</code>.
+            </p>
+
+            <p>
+                El bloque <code>try</code> contiene el código que puede
+                producir una excepción.
+
+                El bloque <code>catch</code> contiene el código que se ejecuta
+                cuando se produce una excepción.
+
+                El bloque <code>catch</code> recibe como parámetro el objeto
+
+                <code>Exception</code> que contiene información sobre el error.
+
+                El bloque <code>catch</code> puede recibir como parámetro un objeto de una clase que herede de <code>Exception</code>.
+            </p>
+
+        </section>
 
 
 
