@@ -60,14 +60,17 @@
                 } catch (UploadException $error) {
                     //throw $th;
                     // abrir fichero error.log modo 'a'
-                    $fichero = fopen('error.log', 'a');
+                    // $fichero = fopen('error.log', 'a');
 
                     // Escribir mensaje de error en el fichero con la fecha y el mensaje de error
-                    fwrite($fichero,  date('d-m-Y H:i:s') . "\n");
-                    fwrite($fichero, $error->getMessage() . "\n");
+                    $mensaje = date('d-m-Y H:i:s') . "\n" . $error->getMessage() . "\n";
 
                     // Cerrar fichero
-                    fclose($fichero);
+                    // fclose($fichero);
+
+                    // Uso del file_put_contents
+                    file_put_contents('error.log', $mensaje, FILE_APPEND);
+
 
                     echo '
                         <div class = "d-flex flex-column justify-content-center align-items-center bg-danger p-5 rounded">
