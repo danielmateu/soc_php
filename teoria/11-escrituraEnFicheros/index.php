@@ -31,7 +31,7 @@
     <main class="p-2" id='escrituraEnFicheros'>
 
         <section class="mb-5">
-            <h2>Escritura en fichero</h2>
+            <h2>Escritura en ficheros</h2>
 
             <p>De la misma forma que tenemos funciones para leer datos de ficheros, tambien tenemos otras para escribir en ellos</p>
 
@@ -192,6 +192,12 @@
                 fprintf($fichero, "\n%s %d %s", $nombre, $edad, $telefono, $email);
                 // fprintf($fichero, "\n%s %d %s", $nombre, $edad, $telefono, $email);
 
+                // Creamos JSON 
+                // $json = json_encode($_POST);
+
+                // Escribimos en el fichero sin sobreescrbir
+                // fprintf($fichero, "\n%s", $json);
+
                 // Cerramos el fichero
                 fclose($fichero);
 
@@ -203,6 +209,151 @@
 
         <section class="mb-5" id="file_put_contents"></section>
 
+        <section class="mb-5" id="fputscsv">
+            <h2>Escritura en CSV</h2>
+
+            <p>La función <code>fputcsv()</code> es similar a <code>fprintf()</code> pero permite dar formato al texto que se va a escribir</p>
+
+            <p>Su sintaxis es la siguiente:</p>
+
+            <pre class="bg-dark text-white p-2">
+                <code>
+                    fputcsv($fichero, $contenido, $separador, $comillas);
+                </code>
+
+            </pre>
+
+            <p>Donde:</p>
+
+            <ul>
+                <li><code>$fichero</code> es el fichero en el que se va a escribir</li>
+                <li><code>$contenido</code> es el contenido que se va a escribir</li>
+                <li><code>$separador</code> es el separador de campos</li>
+                <li><code>$comillas</code> es el carácter de comillas</li>
+
+            </ul>
+
+            <h3>Ejemplo: </h3>
+
+            <?php
+
+            // Recuperamos los valores del formulario
+            $nombre = $_POST['nombre'];
+            $edad = $_POST['edad'];
+            $telefono = $_POST['telefono'];
+            $email = $_POST['email'];
+
+            // Abrimos el fichero para la escritura
+            $fichero = fopen("./data/data.csv", "a");
+
+            // Escribimos en el fichero sin sobreescrbir
+            fputcsv($fichero, $_POST);
+
+            // Cerramos el fichero
+            fclose($fichero);
+
+            echo "<p>Se ha escrito el fichero <code>data.csv</code> en la carpeta <code>data</code></p>";
+
+            ?>
+        </section>
+
+        <section class="mb-5" id="serializacion">
+            <h2>Guardar y recuperar objetos en un fichero: Serialización</h2>
+
+            <p>La serialización es el proceso de convertir un objeto en una secuencia de bytes para almacenarlo en un fichero, en una base de datos o para transmitirlo a través de una red.</p>
+
+            <p>La deserialización es el proceso inverso, es decir, convertir una secuencia de bytes en un objeto.</p>
+
+            <p>PHP proporciona dos funciones para serializar y deserializar objetos:</p>
+
+            <ul>
+                <li><code>serialize()</code>: serializa un objeto</li>
+                <li><code>unserialize()</code>: deserializa un objeto</li>
+            </ul>
+
+            <!-- <h3>Ejemplo: </h3>
+
+            <?php
+
+            ?> -->
+
+        </section>
+
+        <section class="mb-5" id="ficherosPuntoIni">
+            <h2>Ficheros .ini</h2>
+
+            <p>Cómo recuperar información desde
+                ficheros de configuración .ini en PHP</p>
+
+            <p>La función <code>parse_ini_file()</code> permite recuperar la información de un fichero .ini</p>
+
+            <p>Su sintaxis es la siguiente:</p>
+
+            <pre class="bg-dark text-white p-2">
+                <code>
+                    parse_ini_file($fichero, $secciones);
+                </code>
+
+            </pre>
+
+            <p>Donde:</p>
+
+            <ul>
+                <li><code>$fichero</code> es el fichero .ini</li>
+                <li><code>$secciones</code> es un booleano que indica si se devuelven las secciones del fichero</li>
+
+            </ul>
+
+            <p>La funcion <code>parse_ini_string()</code>
+                permite recuperar la información de un fichero .ini desde una cadena</p>
+            </p>
+
+            <p>Su sintaxis es la siguiente:</p>
+
+            <pre class="bg-dark text-white p-2">
+                <code>
+                    parse_ini_string($cadena, $secciones);
+                </code>
+
+            </pre>
+
+            <p>Donde:</p>
+
+            <ul>
+                <li><code>$cadena</code> es la cadena que contiene el fichero .ini</li>
+                <li><code>$secciones</code> es un booleano que indica si se devuelven las secciones del fichero</li>
+        </section>
+
+        <section class="mb-5" id="otrasOperaciones">
+            <h2>Otras operaciones</h2>
+
+            <p>Otras operaciones útiles para trabajar
+                con ficheros</p>
+
+            <p>Podemos copiar, renombrar y borrar ficheros con las siguientes
+                funciones:</p>
+
+            <ul>
+                <li><code>copy()</code>: copia un fichero</li>
+                <li><code>rename()</code>: renombra un fichero</li>
+                <li><code>unlink()</code>: borra un fichero</li>
+
+            </ul>
+
+
+        </section>
+
+        <section class="mb-5" id="directoriosYEnlaces">
+            <p>También podemos crear y eliminar directorios y crear enlaces
+                simbólicos (Linux).</p>
+
+            <ul>
+                <li><code>mkdir()</code>: crea un directorio</li>
+                <li><code>rmdir()</code>: borra un directorio</li>
+                <li><code>symlink()</code>: crea un enlace simbólico</li>
+
+            </ul>
+        </section>
 
     </main>
 
