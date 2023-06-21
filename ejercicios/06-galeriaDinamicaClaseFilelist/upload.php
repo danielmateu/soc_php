@@ -37,26 +37,46 @@
 
                 require_once './libraries/Upload.php';
 
-                // Sube el fichero, hace las comprobaciones y retorna la ruta del fichero subido
-                $ruta = Upload::save(
-                    'fichero',
-                    'imagenes',
-                    true,
-                    250000000,
-                    'image/*',
-                    'img_',
-                    true
-                );
+                try {
+                    // Sube el fichero, hace las comprobaciones y retorna la ruta del fichero subido
+                    $ruta = Upload::save(
+                        'fichero',
+                        'imagenes',
+                        true,
+                        250000000,
+                        'image/*',
+                        'img_',
+                        true
+                    );
 
-                // Muestra el mensaje de exito
-                echo '
-                    <div class = "d-flex flex-column justify-content-center align-items-center bg-success p-5 rounded">
-                        <h3>El fichero se ha subido correctamente!</h3>
-                        <h3>😊</h3>
-                        <img src="' . $ruta . '" alt="Imagen subida" class="img-fluid">
-                    </div>
+                    // Muestra el mensaje de exito
+                    echo '
+                        <div class = "d-flex flex-column justify-content-center align-items-center bg-success p-5 rounded">
+                            <h3>El fichero se ha subido correctamente!</h3>
+                            <h3>😊</h3>
+                            <img src="' . $ruta . '" alt="Imagen subida" class="img-fluid">
+                        </div>
+                        ';
+                } catch (UploadException $error) {
+                    //throw $th;
+                    // abrir fichero error.log modo 'a'
+                    $fichero = fopen('error.log', 'a');
 
-                    ';
+                    // Escribir mensaje de error en el fichero con la fecha y el mensaje de error
+                    fwrite($fichero,  date('d-m-Y H:i:s') . "\n");
+                    fwrite($fichero, $error->getMessage() . "\n");
+
+                    // Cerrar fichero
+                    fclose($fichero);
+
+                    echo '
+                        <div class = "d-flex flex-column justify-content-center align-items-center bg-danger p-5 rounded">
+                            <h3>' . $error->getMessage() . '</h3>
+                            <h3>😢</h3>
+                        </div>
+                        ';
+                }
+
                 ?>
             </pre>
 

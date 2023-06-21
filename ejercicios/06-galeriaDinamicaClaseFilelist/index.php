@@ -28,7 +28,7 @@
             <form method="post" enctype="multipart/form-data" action="upload.php" class="form mb-4">
                 <div>
                     <label for="file-with-preview">Sube una imagen</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1250000000" class="form-control">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1250000" class="form-control">
                     <input type="file" name="fichero" id="file-with-preview" class="form-control" accept=".jpg, .jpeg, .gif, .png">
                 </div>
 
@@ -47,8 +47,6 @@
             $patron = '/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s\.\-\_]{1,50}\.(jpg|jpeg|gif|png)$/i';
 
             $archivos = Filelist::get('./imagenes', $patron);
-
-            // var_dump($archivos);
 
             ?>
 
