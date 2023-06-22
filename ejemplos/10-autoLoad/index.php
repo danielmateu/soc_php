@@ -14,7 +14,7 @@
 <body class="container p-4 position-relative">
 
     <header class="header d-flex flex-column bg-dark  p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4" id="menu">
-        <h1 class="col-6 text-white">Ejemplo de carga de clases con Autoload</h1>
+        <h1 class=" text-white">Ejemplo de carga de clases con Autoload</h1>
         <!-- <nav class="navbar navbar-dark d-flex flex-column align-items-start">
             <a href="#intro">Introducción</a>
 
@@ -29,40 +29,49 @@
 
     <main class="p-2" id=''>
 
+
+
         <section class="mb-5">
             <?php
             include_once 'config/config.php';
             include 'libraries/autoload.php';
 
             // Crea una moto
-            $moto = new Moto('Honda', 'CBR 1000 RR', 'Rojo', 1000, 200);
+            $moto = new Moto('Honda', 'CBR 1000 RR', 'Rojo', 220, 125);
             //  Imprime la moto
+
             echo "
+            <div class='alert alert-primary'>
             <h2>Imprime la moto</h2>
             <pre>
             " . $moto . "
             </pre>
+            </div>
             ";
 
             // Crea un coche
-            $coche = new Coche('Seat', 'Arona', 'Azul', 1000, 200);
+            $coche = new Coche('Seat', 'Arona', 'Azul', 145, 1200);
             //  Imprime el coche
             echo "
+            <div class='alert alert-secondary'>
             <h2>Imprime el coche</h2>
             <pre>
             " . $coche . "
             </pre>
+            </div>
             ";
 
 
             // Crea un Vehículo
-            $vehiculo = new Vehiculo('Boeing', '747', 'Gris', 1000, 200);
+            $vehiculo = new Vehiculo('Boeing', '747', 'Gris', 750, 100000);
             //  Imprime el Vehículo
             echo "
+            <div class='alert alert-success'>
             <h2>Imprime el Vehículo</h2>
             <pre>
             " . $vehiculo . "
             </pre>
+            </div>
             ";
 
             ?>
