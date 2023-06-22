@@ -38,11 +38,10 @@
 
             // Crea una moto
             $moto = new Moto('Honda', 'CBR 1000 RR', 'Rojo', 220, 125);
-            //  Imprime la moto
 
             echo "
             <div class='alert alert-primary'>
-            <h2>Imprime la moto</h2>
+            <h2>Imprime la moto - <strong>" . $moto->getNombre() . "</strong></h2>
             <pre>
             " . $moto . "
             </pre>
@@ -54,20 +53,19 @@
             //  Imprime el coche
             echo "
             <div class='alert alert-secondary'>
-            <h2>Imprime el coche</h2>
+            <h2>Imprime el coche - <strong>" . $coche->getNombre() . "</strong></h2>
             <pre>
             " . $coche . "
             </pre>
             </div>
             ";
 
-
             // Crea un Vehículo
             $vehiculo = new Vehiculo('Boeing', '747', 'Gris', 750, 100000);
             //  Imprime el Vehículo
             echo "
             <div class='alert alert-success'>
-            <h2>Imprime el Vehículo</h2>
+            <h2>Imprime el Vehículo - <strong>" . $vehiculo->getNombre() . "</strong></h2>
             <pre>
             " . $vehiculo . "
             </pre>

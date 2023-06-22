@@ -15,6 +15,12 @@ class Vehiculo
         $this->peso = $peso;
     }
 
+    // Obtener el nombre
+    public function getNombre()
+    {
+        return $this->marca . ' ' . $this->modelo;
+    }
+
     // Método toString
     public function __toString()
     {

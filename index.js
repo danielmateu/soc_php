@@ -9,7 +9,6 @@ btn.addEventListener('click', () => {
 });
 
 // Dark y light mode
-
 // Obtener boton
 const btnDark = document.getElementById('flexSwitchCheckDefault');
 
@@ -21,5 +20,4 @@ btnDark.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
 });
 
-// Autogeneracion de nombres
 
