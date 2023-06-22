@@ -74,8 +74,6 @@
                 continuar su ejecución.
             </p>
 
-
-
         </section>
 
         <section class="mb-5" id="excepciones">

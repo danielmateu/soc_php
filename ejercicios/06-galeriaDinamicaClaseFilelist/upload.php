@@ -58,12 +58,11 @@
                         </div>
                         ';
                 } catch (UploadException $error) {
-                    //throw $th;
                     // abrir fichero error.log modo 'a'
                     // $fichero = fopen('error.log', 'a');
 
                     // Escribir mensaje de error en el fichero con la fecha y el mensaje de error
-                    $mensaje = date('d-m-Y H:i:s') . "\n" . $error->getMessage() . " En linea " . $error->getLine() . "\n";
+                    $mensaje = date('d-m-Y H:i:s') . "\n" . $error->getMessage() . ", en linea " . $error->getLine() . "\n";
 
 
                     // Cerrar fichero
@@ -73,6 +72,13 @@
                     file_put_contents('error.log', $mensaje, FILE_APPEND);
 
 
+                    echo '
+                        <div class = "d-flex flex-column justify-content-center align-items-center bg-danger py-5 rounded ">
+                            <h3>' . $error->getMessage() . '</h3>
+                            <h3>😢</h3>
+                        </div>
+                        ';
+                } catch (Throwable $error) {
                     echo '
                         <div class = "d-flex flex-column justify-content-center align-items-center bg-danger py-5 rounded ">
                             <h3>' . $error->getMessage() . '</h3>
