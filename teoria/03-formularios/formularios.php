@@ -8,6 +8,7 @@
     <title>Formularios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 </head>
 
 <body class="container ">
@@ -16,10 +17,10 @@
         <form method="POST" class="d-flex flex-column">
             <label for="cateto1">Cateto 1</label>
             <input type="number" name="cateto1" id="cateto1" placeholder="Introduce el primer cateto">
-    
+
             <label for="cateto2">Cateto 2</label>
             <input type="number" name="cateto2" id="cateto2" placeholder="Introduce el segundo cateto">
-    
+
             <input type="submit" value="calcular" class="btn btn-primary mt-4" name="calcular">
         </form>
     </div>

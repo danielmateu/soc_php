@@ -8,6 +8,8 @@
     <title>Cookies y WebStorage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles.css">
+    <!-- Icono -->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -53,7 +55,24 @@
         <section class="mb-5">
             <h2>Persistencia de datos</h2>
 
-            
+
+
+        </section>
+
+        <section class="mb-5">
+            <h2>Tipos de Cookies</h2>
+
+            <p>
+                Las cookies pueden clasificarse según los siguientes criterios:
+            </p>
+
+            <ul>
+                <li>Cookies Técnicas</li>
+                <li>Cookies de personalización</li>
+                <li>Cookies estadísticas</li>
+                <li>Cookies de publicidad</li>
+            </ul>
+
 
         </section>
 
