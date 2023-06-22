@@ -1,7 +1,7 @@
 <?php
 // Crear una cookie
 // setcookie("nombre", "valor", $expiracion, $ruta, $dominio, $seguridad);
-setcookie("curso", "aplicaciones web", time() + 15);
+setcookie("curso", "aplicaciones web", time() + 25);
 ?>
 
 <!DOCTYPE html>
