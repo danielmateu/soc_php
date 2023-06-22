@@ -1,3 +1,9 @@
+<?php
+// Crear una cookie
+// setcookie("nombre", "valor", $expiracion, $ruta, $dominio, $seguridad);
+setcookie("curso", "aplicaciones web", time() + 15);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +25,9 @@
         <h1 class="col-6 text-white">Cookies y WebStorage</h1>
         <nav class="navbar navbar-dark d-flex flex-column align-items-start">
             <a href="#intro">Introducción</a>
+            <a href="#persistencia">Persistencia de datos</a>
+            <a href="#tipoDeCookies"></a>
+            <a href="#enviandoCookies">Enviando Cookies</a>
 
         </nav>
         <!-- Boton para cambio de modo -->
@@ -31,7 +40,7 @@
 
     <main class="p-2" id=''>
 
-        <section class="mb-5">
+        <section class="mb-5" id="intro">
             <h2>Introducción</h2>
 
             <p>
@@ -52,14 +61,14 @@
 
         </section>
 
-        <section class="mb-5">
+        <section class="mb-5" id="persistencia">
             <h2>Persistencia de datos</h2>
 
 
 
         </section>
 
-        <section class="mb-5">
+        <section class="mb-5" id="tipoDeCookies">
             <h2>Tipos de Cookies</h2>
 
             <p>
@@ -76,8 +85,55 @@
 
         </section>
 
+        <section class="mb-5" id="enviandoCookies">
+            <h2>Enviando Cookies</h2>
 
+            <p>
+                Para enviar cookies al cliente, se utiliza la función
+                <code>setcookie()</code> que recibe los siguientes parámetros:
+            </p>
 
+            <ul>
+                <li>Nombre de la cookie</li>
+                <li>Valor de la cookie</li>
+                <li>Fecha de caducidad</li>
+                <li>Ruta</li>
+                <li>Dominio</li>
+                <li>Seguridad</li>
+                <li>HTTPOnly</li>
+            </ul>
+
+            <p>
+                <code>setcookie()</code> debe ejecutarse antes de que se envíe
+                cualquier salida al navegador, ya que las cookies se envían en la
+                cabecera HTTP de la respuesta.
+            </p>
+
+            <p>
+                Para eliminar una cookie, se puede utilizar la función
+                <code>setcookie()</code> con el valor de la cookie vacío y una
+                fecha de caducidad en el pasado.
+
+            </p>
+
+            <p>
+                Para modificar una cookie, se puede utilizar la función
+                <code>setcookie()</code> con el nuevo valor de la cookie y una
+                fecha de caducidad en el futuro.
+            </p>
+
+            <p>
+                Para leer el valor de una cookie, se puede utilizar la variable
+                superglobal <code>$_COOKIE</code>.
+
+            </p>
+
+            <p>
+                Para comprobar si una cookie existe, se puede utilizar la función
+                <code>isset()</code> con la variable superglobal <code>$_COOKIE</code>.
+            </p>
+
+        </section>
     </main>
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
