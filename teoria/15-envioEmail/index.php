@@ -175,7 +175,6 @@ setcookie("curso", "aplicaciones web", time() + 25);
 
             </pre>
 
-
             <?php
             // Enviamos un email con contenido HTML
             $to = "cabebbd593@mymaily.lol";
@@ -183,10 +182,20 @@ setcookie("curso", "aplicaciones web", time() + 25);
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8\r\n";
             $headers .= "To: <$to>\r\n";
-            $headers .= "From: LOCALHOST <dani@hotmail.com>\r\n";
+            $headers .= "From: LOCALHOST <pepe@hotmail.com>\r\n";
 
-            $message = "<h1>Hola</h1><p>Esto es una prueba de envio de email</p>";
-            
+            $message = <<<EOD
+            <!DOCTYPE html>
+                <head>
+                    <html lang='en'>
+                    <title>Prueba de envio de email</title>
+                </head>
+                <body>
+                    <h1>Hola</h1><p>Esto es una prueba de envio de email</p>
+                </body>
+            </html>
+            EOD;
+
             echo mail($to, $subject, $message, $headers) ? "Email enviado a las " . date('H:i:s') : "Email no enviado";
 
             // Mostrar contenido del email
@@ -195,7 +204,6 @@ setcookie("curso", "aplicaciones web", time() + 25);
             echo "</pre>";
 
             ?>
-
 
         </section>
 
