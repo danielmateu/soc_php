@@ -28,6 +28,9 @@ setcookie("curso", "aplicaciones web", time() + 25);
             <a href="#persistencia">Persistencia de datos</a>
             <a href="#tipoDeCookies"></a>
             <a href="#enviandoCookies">Enviando Cookies</a>
+            <a href="#recuperandoCookies">Recuperando Cookies</a>
+            <a href="#eliminarCookies">Eliminando Cookies</a>
+            <a href="#guardandoObjetos">Guardando Objetos</a>
 
         </nav>
         <!-- Boton para cambio de modo -->
@@ -133,6 +136,35 @@ setcookie("curso", "aplicaciones web", time() + 25);
                 <code>isset()</code> con la variable superglobal <code>$_COOKIE</code>.
             </p>
 
+        </section>
+
+        <section class="mb-5" id="recuperandoCookies">
+            <h2>Recuperando Cookies</h2>
+        </section>
+
+        <section class="mb-5" id="eliminarCookies">
+            <h2>Eliminando Cookies</h2>
+
+            <p>
+                Para eliminar una cookie, se puede utilizar la función
+                <code>setcookie()</code> con el valor de la cookie vacío y una fecha de caducidad en el pasado.
+            </p>
+
+        </section>
+
+        <section class="mb-5" id="guardandoObjetos">
+            <h2>Guardando Objetos</h2>
+
+            <p>
+                Podemos guardar objetos, que nos permitirán guardar más
+                información y mejor organizada, siempre y cuando los
+                serialicemos tal y como vimos en la presentación sobre ficheros.
+
+                Evidentemente también podemos guardar arrays repletos de objetos.
+
+                Recordemos que para realizar las operaciones de serialización y
+                deserialización, tenemos los métodos serialize() y unserialize().
+            </p>
         </section>
     </main>
 
