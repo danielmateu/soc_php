@@ -43,6 +43,13 @@ class Email
         $this->message .= "<p>$message</p>";
     }
 
+    // método que cambia el destinatario
+    public function to(string $to): void
+    {
+        $this->to = $to;
+    }
+
+
     // método que envía el email usando la función mail() de PHP
     public function send(): bool
     {

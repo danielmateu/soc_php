@@ -29,9 +29,6 @@ setcookie("curso", "aplicaciones web", time() + 25);
             <a href="#enviandoEmails">Enviando un email</a>
             <a href="#solucionDeProblemas">Solución de problemas</a>
             <a href="#emailsConContenido">Emails con Contenido</a>
-
-
-
         </nav>
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -189,6 +186,7 @@ setcookie("curso", "aplicaciones web", time() + 25);
                 <head>
                     <html lang='en'>
                     <title>Prueba de envio de email</title>
+                    
                 </head>
                 <body>
                     <h1>Hola</h1><p>Esto es una prueba de envio de email</p>
@@ -202,12 +200,9 @@ setcookie("curso", "aplicaciones web", time() + 25);
             echo "<pre class='bg-dark text-white p-2 mt-2'>";
             echo $message;
             echo "</pre>";
-
             ?>
 
-        </section>
-
-
+        </section
     </main>
 
     <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
