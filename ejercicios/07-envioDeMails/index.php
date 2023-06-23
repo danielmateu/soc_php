@@ -38,9 +38,69 @@
                 nuestra.
             </p>
 
+            <!--Inicio  Formulario -->
 
+            <form action="enviar.php" method="POST" class="row g-3">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
+                </div>
+                <div class="col-12">
+                    <label for="asunto" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Asunto" required />
+                </div>
+                <div class="col-12">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" name='enviar'>Enviar</button>
+            </form>
+            <!-- Fin Formulario -->
 
+            <?php
+            require './config/config.php';
+            require './libraries/autoload.php';
 
+            $direcciones = [
+                'dani@gmail.com',
+                'meh@gmail.com',
+                'pepe@hotmail.com',
+                'nuk@gmail.com'
+            ];
+
+            // Si se ha enviado el formulario
+            if (isset($_POST['enviar'])) {
+                // Creamos un objeto de la clase Email
+                $email = new Email(
+                    $_POST['nombre'],
+                    $_POST['email'],
+                    $_POST['asunto'],
+                    $_POST['mensaje'],
+                    $_TO['']
+                );
+
+                foreach ($direcciones as $direccion) {
+                    // Cambiamos el destinatario
+                    $email->to($direccion);
+                    // Enviamos el email
+                    $email->send();
+                }
+
+                // Mostramos el resultado
+                echo "
+                <p class='alert alert-success mt-3'>El email se ha enviado correctamente</p>
+                
+                <p class='alert alert-info mt-3'>Datos del email enviado:</p>
+
+                <p>De: {$email->getInfo()}</p>
+                ";
+            }
+
+            ?>
         </section>
 
     </main>

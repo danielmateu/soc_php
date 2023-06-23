@@ -43,20 +43,27 @@ class Email
         $this->message .= "<p>$message</p>";
     }
 
-    // método que cambia el destinatario
-    public function to(string $to): void
-    {
-        $this->to = $to;
-    }
-
-
     // método que envía el email usando la función mail() de PHP
     public function send(): bool
     {
         if (!mail($this->to, $this->subject, $this->message, $this->headers))
-            // throw new EmailException("No se pudo enviar el email.");
             throw new Exception("No se pudo enviar el email.");
 
         return true;
+    }
+
+    // Método getInfo()
+    // Devuelve un array con la información del email
+    public function getInfo(): array
+    {
+        return [
+            'date' => $this->date,
+            'to' => $this->to,
+            'from' => $this->from,
+            'name' => $this->name,
+            'subject' => $this->subject,
+            'message' => $this->message,
+            'headers' => $this->headers
+        ];
     }
 }
