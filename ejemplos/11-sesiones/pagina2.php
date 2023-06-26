@@ -2,7 +2,7 @@
 // Path: ejemplos\11-sesiones\index.php
 session_start();
 
-$_SESSION['usuario'] = 'Pepe';
+// $_SESSION['usuario'] = 'Pepe';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@ $_SESSION['usuario'] = 'Pepe';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de Sesiones</title>
+    <title>Pagina 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
@@ -20,7 +20,7 @@ $_SESSION['usuario'] = 'Pepe';
 <body class="container p-4 position-relative">
 
     <header class="header d-flex flex-column bg-dark  p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4" id="menu">
-        <h1 class=" text-white">Ejemplo de Sesiones</h1>
+        <h1 class=" text-white">Pagina 2</h1>
 
         </nav>
         <!-- Boton para cambio de modo -->
@@ -34,25 +34,22 @@ $_SESSION['usuario'] = 'Pepe';
     <main class="p-2" id=''>
 
         <section class="mb-5">
-            <p>Este es el dato guardado:
-                <?php
-                echo $_SESSION['usuario'];
-                ?>
-            </p>
+            <!-- Revisamos si el dato sigue guardado -->
 
-            <p>
-                Dale al <a href="pagina2.php" class="btn btn-blue-100">enlace</a> para comprobar el ejemplo
-            </p>
             <?php
-
+            if (isset($_SESSION['usuario'])) {
+                echo "<p>El dato guardado es: " . $_SESSION['usuario'] . "</p>";
+            } else {
+                echo "<p>No hay datos guardados</p>";
+            }
             ?>
         </section>
 
     </main>
 
-    <button class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
+    <a href="index.php" class="btn btn-secondary btn-lg d-block mx-auto mt-5" id="btn-scroll">
         Volver al principio
-    </button>
+    </a>
 
     <footer class="p-2 mt-5 border-top text-center">
         &copy; <?= date('Y') ?> - Desarrollo Web en Entorno Servidor
