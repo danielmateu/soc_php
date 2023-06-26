@@ -48,6 +48,35 @@ setcookie("curso", "aplicaciones web", time() + 25);
         <section class="mb-5" id="sesiones">
             <h2>Sesiones</h2>
 
+            <p>
+                Las sesiones son una forma sencilla de guardar los datos entre
+                peticiones en el servidor, de manera individual, mediante un
+                identificador de sesión único.
+            </p>
+
+            <p>
+                El uso de sesiones en PHP es muy sencillo:
+
+                Para indicar que usaremos sesiones, comenzaremos nuestros ficheros
+                PHP con la función session_start().
+
+                Al igual que pasaba con la función setcookie(), no podemos imprimir
+                nada antes de esta función, en caso contrario se enviarían los encabezados de la respuesta y session_start() no funcionaría.
+
+                A partir de ese momento, dispondremos de un array asociativo superglobal, llamado $_SESSION en el cual podremos guardar y recuperar los datos de la sesión.
+            </p>
+
+            <p>
+                Para crear una nueva variable de sesión guardaremos algo en la
+                posición deseada del array $_SESSION:
+                $_SESSION[‘usuario’] = “Pepe”;
+            </p>
+
+            <p>
+                Para recuperar el valor de una variable de sesión, simplemente
+                accederemos a la posición del array donde la guardamos:
+                echo $_SESSION[‘usuario’];
+            </p>
         </section>
 
 
