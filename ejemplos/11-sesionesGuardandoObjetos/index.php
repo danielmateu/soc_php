@@ -39,7 +39,6 @@ include './script.php';
             <div>
                 <?php
                 if (empty($_SESSION['usuario'])) { ?>
-
                     <form method="POST">
                         <div class="mb-3">
                             <label for="usuario" class="form-label">Usuario</label>
@@ -51,18 +50,15 @@ include './script.php';
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
-
                 <?php
                 } else { ?>
+                    <p>Bienvenido <?= $_SESSION['usuario']->nombre ?>! 😋</p>
                     <form method="POST">
                         <input type="hidden" name="logout">
                         <button type="submit" class="btn btn-primary">Logout</button>
                     </form>
-
                 <?php
-
                 }
-
                 ?>
             </div>
 
