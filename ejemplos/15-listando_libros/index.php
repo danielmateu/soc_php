@@ -45,8 +45,9 @@ require_once './scripts/recuperarLibros.php';
     <main class="p-2" id=''>
 
         <h2>Lista de libros</h2>
+
         <section class="mb-5" id="">
-            <ul>
+            <ul class="">
                 <?php
                 // Recorremos el array de libros
                 foreach ($libros as $libro) {
@@ -54,6 +55,8 @@ require_once './scripts/recuperarLibros.php';
                 }
                 ?>
             </ul>
+
+
         </section>
 
 
