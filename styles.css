@@ -61,3 +61,7 @@ img:hover {
     background-color: #597a86;
     padding: 1em;
 }
+
+ul {
+    list-style: none;
+}
