@@ -9,24 +9,18 @@ include '../libraries/autoload.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de datos - Clase DB</title>
+    <title>Base de datos - Tests en modelo Libro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../../styles.css">
     <!-- Icono -->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
-
 </head>
 
 <body class="container p-4 position-relative">
 
     <header class="header d-flex flex-column bg-dark  p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4" id="menu">
-        <h1 class="col-6 text-white">Base de datos - Clase DB</h1>
-        <!-- <nav class="navbar navbar-dark d-flex flex-column align-items-start">
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-        </nav> -->
+        <h1 class="text-white">Base de datos - Tests en modelo Libro</h1>
+
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -36,90 +30,63 @@ include '../libraries/autoload.php';
     </header>
 
     <main class="p-2" id=''>
-
-        <!-- <h2>Lista de libros</h2> -->
-
-        <!-- Mostrando un cliente -->
+        <!-- Recuperar todos los libros -->
         <section class="mb-5" id="">
             <?php
             // Pruebas de select() o selectOne()
-            echo "<h3>Recuperando el socio 5</h3>";
-            echo "<pre>";
-            var_dump(DB::select("SELECT * FROM socios WHERE id = 5"));
-            echo "</pre>";
-            ?>
+            // echo "<h3>Recuperando todos los libros</h3>";
+            // $libros = Libro::get();
+            // // Mostramos una lista de los libros
+            // echo "<ul>";
+            // foreach ($libros as $libro) {
+            //     echo "<li>$libro</li>";
+            // }
+            // echo "</ul>";
 
+            // echo "<pre>";
+            // var_dump(Libro::get());
+            // echo "</pre>";
+            ?>
         </section>
 
-        <!-- Mostrando todos los clientes -->
+        <!-- Recuperar un libro que existe -->
         <section class="mb-5" id="">
             <?php
-            // Pruebas de select() o selectOne()
-            echo "<h3>Recuperando todos los socios que vivan en Barcelona</h3>";
-            echo "<pre>";
-            var_dump(DB::selectAll("SELECT * FROM socios WHERE poblacion = 'Barcelona'"));
-            echo "</pre>";
-            ?>
+            // echo "<h3>Recuperando el libro con el id 3...</h3>";
 
+            // $libro = Libro::getById(3);
+            // echo "<pre>";
+            // var_dump($libro);
+            // echo "</pre>";
+            ?>
         </section>
 
-        <!-- Insert nuevo tema -->
+        <!-- Guardar un libro -->
         <section class="mb-5">
             <?php
-            // Pruebas de insert()
-            // echo "<h3>Insertando un nuevo tema</h3>";
+            echo "<h3>Guardando un nuevo libro...</h3>";
 
-            // $consulta = "INSERT INTO temas (tema, descripcion) VALUES ('viajes', 'Temas relacionados con viajes')";
+            $libro = new Libro();
 
-            // $id = DB::insert($consulta);
+            $libro->isdn = '978-84-904-1849-25';
+            $libro->titulo = 'El Quijote';
+            $libro->editorial = 'Anaya';
+            $libro->idioma = 'Español';
+            $libro->autor = 'Miguel de Cervantes';
+            $libro->ediciones = 1;
+            $libro->edadRecomendada = 18;
 
-            // echo "<p>Se ha insertado el tema con id $id</p>";
+            // Guarda el libro y actualiza su ID
+            $libro->save();
+            echo "<p>Libro guardado con el id $libro->id</p>";
+
+            // Mostrar el libro guardado
+            echo "<p>Mostrando el libro guardado...</p>";
+            echo Libro::getById($libro->id);
+
 
             ?>
-
         </section>
-
-        <!-- Update tema -->
-        <section class="mb-5">
-            <?php
-            // echo "<h3>Actualizando el tema con id 19</h3>";
-
-            // $consulta = "UPDATE temas SET tema = 'Testeo de tema' WHERE id = 19";
-
-            // $filas = DB::update($consulta);
-
-            // echo "<p>Se ha actualizado el tema con id 19</p>";
-            ?>
-        </section>
-
-        <!-- Delete tema -->
-        <section class="mb-5">
-            <?php
-            echo "<h3>Borrando el tema con id 19</h3>";
-
-            $consulta = "DELETE FROM temas WHERE id = 19";
-
-            $filas = DB::delete($consulta);
-
-            echo "<p>Filas afectadas $filas</p>";
-
-            echo "<p>Se ha borrado el tema con id 19</p>";
-            ?>
-        </section>
-
-        <!-- Pruebas de Totales -->
-        <section class="mb-5">
-            <?php
-            echo "<h3>Recuperando el total de socios</h3>";
-
-            echo "<p>Total de socios " . DB::total('socios') . "</p>";
-            // Precio medio de ejemplares
-            echo "<p>Precio medio de ejemplares " . DB::total('ejemplares', 'AVG', 'precio') . " €</p>";
-
-            // echo "<p>Total de socios $total</p>";
-            ?>
-        </section>
-
 
     </main>
 
@@ -131,7 +98,7 @@ include '../libraries/autoload.php';
         &copy; <?= date('Y') ?> - Desarrollo Web en Entorno Servidor
     </footer>
 
-    <script src="../../index.js"></script>
+    <script src="../../../index.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ class Libro
     }
 
     // Método para recuperar un libro a partir de su id (NULL si no existe)
-    public static function getLibro(int $id): ?Libro
+    public static function getById(int $id): ?Libro
     {
         $consulta = "SELECT * FROM libros WHERE id = $id";
         return DB::selectOne($consulta, self::class);
@@ -83,6 +83,6 @@ class Libro
     // Método toString, lo usaremos principalmente en test
     public function __toString()
     {
-        return "Libro: $this->titulo, de $this->autor";
+        return "$this->id - $this->titulo, de <strong>$this->autor</strong> ISDN: $this->isdn";
     }
 }

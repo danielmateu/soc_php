@@ -97,7 +97,7 @@ class DB implements DatabaseConnection
         string $consulta,
         string $class = 'stdClass'
     ): ?object {
-        return self::select($consulta);
+        return self::select($consulta, $class);
     }
 
 
