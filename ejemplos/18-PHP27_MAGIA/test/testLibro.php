@@ -50,9 +50,9 @@ include '../libraries/autoload.php';
         <section class="mb-5" id="">
             <h3>Recuperando el libro con el id 3...</h3>
             <?php
-            $libro = Libro::getById(3);
+            $libro = Libro::getById(10);
 
-            echo "<p>$libro</p>";
+            echo $libro ? "<p>$libro</p>" : "<p class='alert alert-danger'>El libro no existe</p>";
             ?>
         </section>
 
@@ -99,17 +99,10 @@ include '../libraries/autoload.php';
         <section class="mb-5">
             <h3>Borrar un libro</h3>
             <?php
-            // Obtener el libro
-            $libro = Libro::getById(3);
-            try {
-                //code...
-                $numeroFilasBorradas = Libro::delete($libro);
 
-                echo "<p>Se han borrado $numeroFilasBorradas filas</p>";
-            } catch (\Throwable $th) {
-                //throw $th;
-                echo "<p class='alert alert-danger'>El libro con no existe</p>";
-            }
+            $filasAfectadas = Libro::delete(58);
+            echo $filasAfectadas ? "<p>Se han borrado $filasAfectadas filas</p>" : "<p class='alert alert-danger'>El libro no existe</p>";
+
             ?>
         </section>
 
