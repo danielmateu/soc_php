@@ -56,9 +56,9 @@ class Libro
     }
 
     // Método para borrar un libro
-    public function delete()
+    public static function delete(int $id): int
     {
-        $consulta = "DELETE FROM libros WHERE id = $this->id";
+        $consulta = "DELETE FROM libros WHERE id = $id";
         // Devuelve el número de filas afectadas
         return DB::delete($consulta);
     }
