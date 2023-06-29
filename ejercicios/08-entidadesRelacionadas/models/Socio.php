@@ -6,6 +6,15 @@ class Socio extends Model
 
     // Constructor
 
+    // Método para recuperar todos los préstamos de un socio
+
+    public function getPrestamos(): array
+    {
+        $consulta = "SELECT * FROM prestamos WHERE idsocio=$this->id";
+
+        return DB::selectAll($consulta, 'Prestamo');
+    }
+
     // Método toString
     public function __toString()
     {
