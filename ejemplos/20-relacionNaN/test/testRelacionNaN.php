@@ -9,7 +9,7 @@ include '../libraries/autoload.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entidades Relacionadas - Tests Ejemplares Libros </title>
+    <title>Entidades Relacionadas - Tests Relación N a N</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../styles.css">
     <!-- Icono -->
@@ -19,7 +19,7 @@ include '../libraries/autoload.php';
 <body class="container p-4 position-relative">
 
     <header class="header d-flex flex-column bg-dark  p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4" id="menu">
-        <h1 class="text-white">Entidades Relacionadas - Tests Ejemplares Libros </h1>
+        <h1 class="text-white">Entidades Relacionadas - Tests Relación N a N</h1>
 
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
@@ -32,30 +32,48 @@ include '../libraries/autoload.php';
     <main class="p-2" id=''>
         <!-- Recuperar todos los libros -->
         <section class="mb-5" id="">
-            <h2>Recuperamos un libro y sus ejemplares</h2>
+            <h2>Recuperamos todos los temas de un libro</h2>
 
             <?php
             // Recuperamos el libro 3
-            $libro = Libro::getById(3);
+            $libro = Libro::getById(10);
             echo "<p>Libro recuperado: $libro</p>";
 
-            // Recuperamos los ejemplares del libro 3
-            $ejemplares = $libro->getEjemplares();
+            // Recuperamos los temas del libro 3
+            $temas = $libro->getTemas();
+            // echo "<p>Temas del libro 3: $temas</p>";
+            // Mostramos los temas
 
-            // Mostramos los ejemplares
-            // echo "<p>Ejemplares del libro $libro->titulo:</p>";
-            foreach ($ejemplares as $ejemplar) {
-                echo "<p>$ejemplar</p>";
+            echo "<ul>";
+            foreach ($temas as $tema) {
+                echo "<li>$tema</li>";
             }
+            echo "</ul>";
+
 
             ?>
         </section>
 
-        <!-- Recuperar los ejemplares de un prestamo -->
+        <!-- Recuperar libros de los temas -->
+
         <section class="mb-5">
-            <h2>Recuperar los ejemplares de un prestamo</h2>
+            <h2>Recuperamos todos los libros de un tema</h2>
 
             <?php
+            // Recuperamos el tema 5
+            $tema = Tema::find(5);
+            echo "<p>Tema recuperado: $tema</p>";
+
+            // Recuperamos los libros del tema 5
+            $libros = $tema->getLibros();
+            // echo "<p>Libros del tema 5: $libros</p>";
+            // Mostramos los libros
+
+            echo "<ul>";
+            foreach ($libros as $libro) {
+                echo "<li>$libro</li>";
+            }
+            echo "</ul>";
 
             ?>
         </section>
