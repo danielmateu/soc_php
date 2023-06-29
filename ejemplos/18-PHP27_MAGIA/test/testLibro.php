@@ -106,6 +106,18 @@ include '../libraries/autoload.php';
             ?>
         </section>
 
+        <!-- FIltrar libros -->
+        <section class="mb-5">
+            <h3>Filtrar libros</h3>
+            <?php
+            $libros = Libro::getFiltered("titulo", "El señor");
+            echo "<ul>";
+            foreach ($libros as $libro) {
+                echo "<li>$libro</li>";
+            }
+            echo "</ul>";
+            ?>
+        </section>
         <!-- Calculo de totales -->
         <section class="mb-5">
             <?php
