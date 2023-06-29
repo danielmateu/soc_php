@@ -110,7 +110,7 @@ include '../libraries/autoload.php';
         <section class="mb-5">
             <h3>Filtrar libros</h3>
             <?php
-            $libros = Libro::getFiltered("titulo", "El señor");
+            $libros = Libro::getFiltered("titulo", "El");
             echo "<ul>";
             foreach ($libros as $libro) {
                 echo "<li>$libro</li>";
