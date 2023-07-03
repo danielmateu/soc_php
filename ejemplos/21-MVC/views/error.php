@@ -14,7 +14,7 @@
 
 <body class="container p-4 position-relative">
 
-    <header class="header d-flex bg-dark p-4 mb-4 position-sticky top-0 start-0  rounded opacity-4" id="menu">
+    <header class="header d-flex bg-dark p-4 mb-4 position-sticky top-0 start-0  col-12 rounded opacity-4 align-items-center justify-content-between" id="menu">
         <h1 class="text-white">Error Page</h1>
 
         <nav class="nav grid gap-3">
@@ -23,11 +23,10 @@
             <a href="index.php?controlador=libro/create" class="">Nuevo libro</a>
         </nav>
 
-
-
         <!-- Boton para cambio de modo -->
         <div class="form-check form-switch position-absolute top-0 end-0 me-1 mt-1">
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Modo</label> -->
         </div>
 
     </header>

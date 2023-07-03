@@ -1,22 +1,14 @@
 <?php
 
-$autoloadDirectories = [
+define('AUTOLOAD_DIRECTORIES', [
     '../models',
     '../libraries',
     '../exceptions',
     '../interfaces'
-];
+]);
 
 // Controlador por defecto
 define('DEFAULT_CONTROLLER', 'welcome');
-
-// Parametros de configuracion del AUTOLOAD
-// define('AUTOLOAD_DIRECTORIES', [
-//     '../models',
-//     '../libraries',
-//     '../exceptions',
-//     '../interfaces'
-// ]);
 
 // Parámetros de configuración de la DB
 define('DB_HOST', 'localhost');
