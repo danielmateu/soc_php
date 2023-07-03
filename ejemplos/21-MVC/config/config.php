@@ -4,7 +4,7 @@ define('AUTOLOAD_DIRECTORIES', [
     '../models',
     '../libraries',
     '../exceptions',
-    '../interfaces'
+
 ]);
 
 // Controlador por defecto
